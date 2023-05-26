@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { rtkApi } from "./redux/slices/apiSlice";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { createWrapper } from "next-redux-wrapper";
 
-export const store = configureStore({
+const store = () => configureStore({
   reducer: {
     [rtkApi.reducerPath]: rtkApi.reducer,
   },
@@ -11,3 +12,6 @@ export const store = configureStore({
 });
 
 setupListeners(store.dispatch);
+
+
+export const wrapper = createWrapper(store);

@@ -4,6 +4,10 @@ import { store } from "../store";
 import { Provider } from "react-redux";
 import { Roboto } from "next/font/google";
 import "../styles.css";
+import { wrapper } from "@/store";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import CategoryBar from "@/components/CategoryBar";
 
 const roboto = Roboto({
   weight: "400",
@@ -21,7 +25,7 @@ const theme = extendTheme({
   config,
 });
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -40,11 +44,16 @@ export default function App({ Component, pageProps }) {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="" />
       </Head>
-      <Provider store={store}>
+      <>
         <ChakraProvider theme={theme}>
+          <Header />
+          <CategoryBar />
           <Component {...pageProps} />
+          <Footer />
         </ChakraProvider>
-      </Provider>
+      </>
     </>
   );
 }
+
+export default wrapper.withRedux(App);
