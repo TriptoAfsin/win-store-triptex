@@ -7,7 +7,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -22,7 +21,6 @@ import {
 } from "@chakra-ui/react";
 import WishlistModal from "../Modals/WishlistModal";
 import CartModal from "../Modals/CartModal";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 
 function Header() {

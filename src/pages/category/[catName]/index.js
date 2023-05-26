@@ -2,6 +2,9 @@
 
 import React from "react";
 import { useRouter } from "next/router";
+import { Box, Text, Heading, Spinner } from "@chakra-ui/react";
+import enumFormatter from "@/utils/enumFormatter";
+import ProductCards from "@/components/Cards/ProductCards";
 
 function CategoryPage({ catProducts }) {
   const router = useRouter();
@@ -9,18 +12,60 @@ function CategoryPage({ catProducts }) {
 
   if (router.isFallback) {
     //this will be shown on ID above 100, but for a bit,but fetch the actual post in the meantime
-    return <h1>⏳ Loading ....</h1>;
+    return (
+      <Box
+        display={"flex"}
+        flexDir={"row"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Spinner color="#03484c" mt={20} size={"lg"} />
+      </Box>
+    );
   }
 
   return (
-    <>
-      <h2>{catName}</h2>
-      {catProducts?.map(prod => (
-        <div key={prod?.id}>
-          <p>{prod?.title}</p>
-        </div>
-      ))}
-    </>
+    <Box
+      display={"flex"}
+      flexDir={"column"}
+      justifyContent={"center"}
+      alignItems={"center"}
+    >
+      <Heading mt={5}>{enumFormatter(catName)}</Heading>
+      <Box
+        display={"flex"}
+        flexDir={["column", "column", "row", "row"]}
+        justifyContent={"center"}
+        alignItems={"center"}
+        mt={5}
+      >
+        {catProducts ? (
+          catProducts?.length > 0 ? (
+            catProducts?.map(prod => (
+              <ProductCards prod={prod} key={prod?.id} />
+            ))
+          ) : (
+            <Box
+              display={"flex"}
+              flexDir={"row"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              <Text>No Products 😭</Text>
+            </Box>
+          )
+        ) : (
+          <Box
+            display={"flex"}
+            flexDir={"row"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Spinner color="#03484c" mt={20} size={"lg"} />
+          </Box>
+        )}
+      </Box>
+    </Box>
   );
 }
 

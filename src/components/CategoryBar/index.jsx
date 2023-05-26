@@ -68,7 +68,7 @@ function CategoryBar() {
           </MenuButton>
           <MenuList color={"black"}>
             {!isLoading ? (
-              fakeCats?.map(item => <MenuItem key={item}>{enumFormatter(item)}</MenuItem>)
+              fakeCats?.map(item => <MenuItem key={item} mb={2}><Link href={`/category/${item}`}>{enumFormatter(item)}</Link></MenuItem>)
             ) : (
               <Box
                 display={"flex"}

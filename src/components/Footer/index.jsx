@@ -45,7 +45,6 @@ function Footer() {
       <Box
         display={"flex"}
         as="footer"
-        position="sticky"
         w="100%"
         bg={"#393939"}
         color={"white"}
@@ -53,7 +52,7 @@ function Footer() {
         minH={["200px", "200px", "404px", "404px"]}
         bottom={0}
         minW={"100vw"}
-        mt={["120vh", "100vh", "100vh", "100vh"]}
+        mt={["20vh", "20vh", "20vh", "20vh"]}
         textAlign={["center", "center", "left", "left"]}
         maxW={'100vw'}
       >
