@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CategoryBar from "@/components/CategoryBar";
 import { Box } from "@chakra-ui/react";
+import NextNProgress from "nextjs-progressbar";
 
 const roboto = Roboto({
   weight: "400",
@@ -49,10 +50,11 @@ function App({ Component, pageProps, ...rest }) {
       <>
         <ChakraProvider theme={theme}>
           <Provider store={store}>
-            <Box minH={"100vh"} display={"flex"} flexDir={"column"}>
+            <Box>
               <Header />
               <CategoryBar />
               <Box flexGrow={1}>
+              <NextNProgress color="#2563eb" />
                 <Component {...pageProps} />
               </Box>
               <Footer />

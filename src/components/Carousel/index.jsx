@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Box,
-  Heading,
   IconButton,
   useBreakpointValue,
   Text,
@@ -11,7 +10,6 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
-import SliderWrapper from "./_SlickSliderStyle";
 
 // Settings for the slider
 const settings = {
@@ -19,7 +17,7 @@ const settings = {
   arrows: false,
   fade: true,
   infinite: true,
-  autoplay: true,
+  autoplay: false,
   speed: 500,
   autoplaySpeed: 5000,
   slidesToShow: 1,

@@ -58,12 +58,20 @@ function Header() {
           <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
             <Box padding={2} onClick={onDrawerClose}>
               <Link href={"/profile"}>
-                <Button fontWeight={'semibold'} width={200}>Profile</Button>
+                <Button fontWeight={"semibold"} width={200}>
+                  Profile
+                </Button>
               </Link>
             </Box>
-          <Box padding={2} onClick={onDrawerClose}>
-            <Button onClick={onWishlistOpen} fontWeight={'semibold'} width={200}>Wishlist</Button>
-          </Box>
+            <Box padding={2} onClick={onDrawerClose}>
+              <Button
+                onClick={onWishlistOpen}
+                fontWeight={"semibold"}
+                width={200}
+              >
+                Wishlist
+              </Button>
+            </Box>
           </Box>
           <DrawerBody></DrawerBody>
         </DrawerContent>
@@ -99,7 +107,7 @@ function Header() {
           cursor={"pointer"}
           width={[100, 100, 132, 132]}
           height={"auto"}
-          mr={16}
+          mr={[10, 10, 10, 16]}
           display={"block"}
         >
           <Link href="/">
@@ -117,7 +125,7 @@ function Header() {
           flexDir={"row"}
           alignItems={"center"}
           ml={"auto"}
-          mr={[0, 0, "153", "153"]}
+          mr={[0, 0, 0, "153"]}
         >
           <Box mt={1} mb={1} display={["none", "none", "none", "block"]}>
             <Text fontSize={11}>Calls Us Now</Text>
@@ -149,7 +157,7 @@ function Header() {
             </Link>
           </Box>
           <Box display={"flex"} height={"auto"} alignItems={"center"}>
-            <Box ml={5} display={["none", "none", "block", "block"]}>
+            <Box ml={5} display={["none", "none", "none", "block"]}>
               <Link href="/profile">
                 <Image
                   src="/images/user-icon.png"
@@ -163,7 +171,7 @@ function Header() {
               ml={5}
               cursor={"pointer"}
               onClick={onWishlistOpen}
-              display={["none", "none", "block", "block"]}
+              display={["none", "none", "none", "block"]}
             >
               <Image
                 src="/images/heart-icon.png"
@@ -181,6 +189,8 @@ function Header() {
               alignItems={"center"}
               fontWeight={"light"}
               onClick={onCartOpen}
+              width={20}
+              height={100}
             >
               <Box>
                 <Text
@@ -202,7 +212,7 @@ function Header() {
           </Box>
         </Box>
         <Box
-          display={["block", "block", "none", "none"]}
+          display={["block", "block", "block", "none"]}
           mr={5}
           color={"black"}
           mt={2}
