@@ -3,6 +3,7 @@ import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CategoryBar from "@/components/CategoryBar";
+import Carousel from "@/components/Carousel";
 
 export default function Home() {
   const {
@@ -13,9 +14,7 @@ export default function Home() {
   return (
     <>
     <Box>
-      <Heading color={"#007df2"}>{isLoading ? "Loading" : "Cats"}</Heading>
-      <Button onClick={() => refetchCats()}>Refetch</Button>
-      {!isLoading ? fakeCats?.map(cat => <p key={cat}>{cat}</p>) : <></>}
+      <Carousel />
     </Box>
     </>
   );

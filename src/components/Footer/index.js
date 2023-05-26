@@ -53,8 +53,9 @@ function Footer() {
         minH={["200px", "200px", "404px", "404px"]}
         bottom={0}
         minW={"100vw"}
-        mt={["100vh", "100vh", 0, 0]}
+        mt={["100vh", "100vh", "100vh", "100vh"]}
         textAlign={["center", "center", "left", "left"]}
+        maxW={'100vw'}
       >
         <Box
           flexDir={["column", "column", "row", "row"]}

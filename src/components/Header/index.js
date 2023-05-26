@@ -1,9 +1,18 @@
 import React from "react";
-import { Flex, Box, Text } from "@chakra-ui/react";
+import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "../Searchbar";
 import { GiHamburgerMenu } from "react-icons/gi";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
 import {
   Modal,
   ModalOverlay,
@@ -14,7 +23,7 @@ import {
 import WishlistModal from "../Modals/WishlistModal";
 import CartModal from "../Modals/CartModal";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 function Header() {
   const {
@@ -27,11 +36,38 @@ function Header() {
     onOpen: onWishlistOpen,
     onClose: onWishlistClose,
   } = useDisclosure();
-  const cartLength = useSelector(
-    state => state?.globalUiSlice?.cartLength,
-  );
+  const cartLength = useSelector(state => state?.globalUiSlice?.cartLength);
+  const {
+    isOpen: isDrawerOpen,
+    onOpen: onDrawerOpen,
+    onClose: onDrawerClose,
+  } = useDisclosure();
+  const btnRef = React.useRef();
   return (
     <>
+      <Drawer
+        isOpen={isDrawerOpen}
+        placement="right"
+        onClose={onDrawerClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Menu</DrawerHeader>
+          <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+            <Box padding={2} onClick={onDrawerClose}>
+              <Link href={"/profile"}>
+                <Button fontWeight={'semibold'} width={200}>Profile</Button>
+              </Link>
+            </Box>
+          <Box padding={2} onClick={onDrawerClose}>
+            <Button onClick={onWishlistOpen} fontWeight={'semibold'} width={200}>Wishlist</Button>
+          </Box>
+          </Box>
+          <DrawerBody></DrawerBody>
+        </DrawerContent>
+      </Drawer>
       <Modal isOpen={isWishlistOpen} onClose={onWishlistClose}>
         <ModalOverlay />
         <ModalContent ml={2} mr={2}>
@@ -147,7 +183,13 @@ function Header() {
               onClick={onCartOpen}
             >
               <Box>
-              <Text color={'#fdde3b'} ml={2} display={cartLength > 0 ? 'block' : 'none'}>{cartLength}</Text>
+                <Text
+                  color={"#fdde3b"}
+                  ml={2}
+                  display={cartLength > 0 ? "block" : "none"}
+                >
+                  {cartLength}
+                </Text>
                 <Image
                   src="/images/cart-empty.png"
                   width={20}
@@ -165,15 +207,12 @@ function Header() {
           color={"black"}
           mt={2}
         >
-          <Menu>
-            <MenuButton>
-              <GiHamburgerMenu size={20} color="white" />
-            </MenuButton>
-            <MenuList>
-              <MenuItem>Profile</MenuItem>
-              <MenuItem onClick={onWishlistOpen}>Wishlist</MenuItem>
-            </MenuList>
-          </Menu>
+          <GiHamburgerMenu
+            size={20}
+            color="white"
+            ref={btnRef}
+            onClick={onDrawerOpen}
+          />
         </Box>
       </Flex>
     </>
