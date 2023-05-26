@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
 import { Spinner } from "@chakra-ui/react";
+import SocialIcons from "../SocialIcons";
 const socialIcons = [
   {
     id: 1,
@@ -69,7 +70,7 @@ function CategoryBar() {
             )}
           </MenuList>
         </Menu>
-        <Text fontSize={18} ml={5}>
+        <Text fontSize={18} ml={5} cursor={'pointer'}>
           Browse By Category
         </Text>
         <Link href={"/"}>
@@ -93,34 +94,7 @@ function CategoryBar() {
           </Text>
         </Link>
       </Box>
-      <Box
-        display={"flex"}
-        flexDir={"row"}
-        ml={[5, 5, "auto", "auto"]}
-        alignItems={"center"}
-        mr={[0, 0, 5, 10]}
-      >
-        {socialIcons?.map(item => (
-          <Box
-            ml={[5]}
-            display={["block", "block", "block", "block"]}
-            key={item?.id}
-          >
-            <Link href={item?.url}>
-              {item?.trueIcon ? (
-                item?.icon
-              ) : (
-                <Image
-                  src={item?.icon}
-                  width={20}
-                  height={10}
-                  alt={item?.alt}
-                />
-              )}
-            </Link>
-          </Box>
-        ))}
-      </Box>
+      <SocialIcons socialIcons={socialIcons}/>
     </Box>
   );
 }

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { store } from "../store";
+// import { store } from "../store";
 import { Provider } from "react-redux";
 import { Roboto } from "next/font/google";
 import "../styles.css";
@@ -8,6 +8,7 @@ import { wrapper } from "@/store";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CategoryBar from "@/components/CategoryBar";
+import { Box } from "@chakra-ui/react";
 
 const roboto = Roboto({
   weight: "400",
@@ -25,7 +26,8 @@ const theme = extendTheme({
   config,
 });
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps, ...rest }) {
+  const { store, props } = wrapper.useWrappedStore(rest);
   return (
     <>
       <Head>
@@ -46,14 +48,20 @@ function App({ Component, pageProps }) {
       </Head>
       <>
         <ChakraProvider theme={theme}>
-          <Header />
-          <CategoryBar />
-          <Component {...pageProps} />
-          <Footer />
+          <Provider store={store}>
+            <Box minH={"100vh"} display={"flex"} flexDir={"column"}>
+              <Header />
+              <CategoryBar />
+              <Box flexGrow={1}>
+                <Component {...pageProps} />
+              </Box>
+              <Footer />
+            </Box>
+          </Provider>
         </ChakraProvider>
       </>
     </>
   );
 }
 
-export default wrapper.withRedux(App);
+export default App;

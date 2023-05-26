@@ -13,12 +13,8 @@ import {
 } from "@chakra-ui/react";
 import WishlistModal from "../Modals/WishlistModal";
 import CartModal from "../Modals/CartModal";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-} from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { useSelector } from 'react-redux';
 
 function Header() {
   const {
@@ -31,6 +27,9 @@ function Header() {
     onOpen: onWishlistOpen,
     onClose: onWishlistClose,
   } = useDisclosure();
+  const cartLength = useSelector(
+    state => state?.globalUiSlice?.cartLength,
+  );
   return (
     <>
       <Modal isOpen={isWishlistOpen} onClose={onWishlistClose}>
@@ -84,7 +83,7 @@ function Header() {
           ml={"auto"}
           mr={[0, 0, "153", "153"]}
         >
-          <Box mt={1} mb={1} display={["none", "none", "block", "block"]}>
+          <Box mt={1} mb={1} display={["none", "none", "none", "block"]}>
             <Text fontSize={11}>Calls Us Now</Text>
             <Box display={"flex"} height={"auto"}>
               <Image
@@ -147,20 +146,28 @@ function Header() {
               fontWeight={"light"}
               onClick={onCartOpen}
             >
-              <Image
-                src="/images/cart.png"
-                width={20}
-                height={100}
-                alt="cart-icon"
-              />
+              <Box>
+              <Text color={'#fdde3b'} ml={2} display={cartLength > 0 ? 'block' : 'none'}>{cartLength}</Text>
+                <Image
+                  src="/images/cart-empty.png"
+                  width={20}
+                  height={100}
+                  alt="cart-icon"
+                />
+              </Box>
               <Text ml={2}>Cart</Text>
             </Box>
           </Box>
         </Box>
-        <Box display={["block", "block", "none", "none"]} mr={5} color={'black'} mt={2}>
+        <Box
+          display={["block", "block", "none", "none"]}
+          mr={5}
+          color={"black"}
+          mt={2}
+        >
           <Menu>
             <MenuButton>
-            <GiHamburgerMenu size={20} color="white"/>
+              <GiHamburgerMenu size={20} color="white" />
             </MenuButton>
             <MenuList>
               <MenuItem>Profile</MenuItem>
