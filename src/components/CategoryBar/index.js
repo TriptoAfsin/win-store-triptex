@@ -3,7 +3,10 @@ import { Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { CgFacebook } from "react-icons/cg";
-
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
+import { Spinner } from "@chakra-ui/react";
 const socialIcons = [
   {
     id: 1,
@@ -36,6 +39,11 @@ const socialIcons = [
 ];
 
 function CategoryBar() {
+  const {
+    data: fakeCats,
+    isLoading,
+    refetch: refetchCats,
+  } = useGetFakeCatsQuery();
   return (
     <Box
       as="header"
@@ -46,12 +54,52 @@ function CategoryBar() {
       flexDir={"row"}
       height={"49px"}
       alignItems={"center"}
-      px={[16,16,14,14]}
+      px={[16, 16, 18, 20]}
     >
       <Box display={["none", "none", "flex", "flex"]} flexDir={"row"}>
-        cats
+        <Menu>
+          <MenuButton>
+            <GiHamburgerMenu size={20} color="white" />
+          </MenuButton>
+          <MenuList color={"black"}>
+            {!isLoading ? (
+              fakeCats?.map(item => <MenuItem key={item}>{item}</MenuItem>)
+            ) : (
+              <Spinner color="#03484c" />
+            )}
+          </MenuList>
+        </Menu>
+        <Text fontSize={18} ml={5}>
+          Browse By Category
+        </Text>
+        <Link href={"/"}>
+          <Text fontSize={16} ml={5} _hover={{ textDecoration: "underline" }}>
+            Home
+          </Text>
+        </Link>
+        <Link href={"/"}>
+          <Text fontSize={16} ml={5} _hover={{ textDecoration: "underline" }}>
+            Easy Monthly Installments
+          </Text>
+        </Link>
+        <Link href={"/"}>
+          <Text fontSize={16} ml={5} _hover={{ textDecoration: "underline" }}>
+            Shop by Brands
+          </Text>
+        </Link>
+        <Link href={"/"}>
+          <Text fontSize={16} ml={5} _hover={{ textDecoration: "underline" }}>
+            Become a Vendor
+          </Text>
+        </Link>
       </Box>
-      <Box display={"flex"} flexDir={"row"} ml={[5,5,"auto","auto"]} alignItems={"center"}>
+      <Box
+        display={"flex"}
+        flexDir={"row"}
+        ml={[5, 5, "auto", "auto"]}
+        alignItems={"center"}
+        mr={[0, 0, 5, 10]}
+      >
         {socialIcons?.map(item => (
           <Box
             ml={[5]}
