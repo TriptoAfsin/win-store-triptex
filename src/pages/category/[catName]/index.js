@@ -6,6 +6,7 @@ import { Box, Text, Heading, Spinner } from "@chakra-ui/react";
 import enumFormatter from "@/utils/enumFormatter";
 import ProductCards from "@/components/Cards/ProductCards";
 import Head from "next/head";
+import { BiConfused } from "react-icons/bi";
 
 function CategoryPage({ catProducts }) {
   const router = useRouter();
@@ -36,7 +37,7 @@ function CategoryPage({ catProducts }) {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Heading mt={5}>{enumFormatter(catName)}</Heading>
+        <Heading mt={5}>{catProducts?.length > 0 ? enumFormatter(catName) : ''}</Heading>
         <Box
           display={"flex"}
           flexDir={["column", "column", "row", "row"]}
@@ -51,13 +52,24 @@ function CategoryPage({ catProducts }) {
               ))
             ) : (
               <Box
-                display={"flex"}
-                flexDir={"row"}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                <Text>No Products 😭</Text>
-              </Box>
+          display={"flex"}
+          flexDir={"column"}
+          padding={[5, 5, 10, 10]}
+          alignItems={["center", "center", "center", "center"]}
+        >
+          <Box
+            display={"flex"}
+            flexDir={"column"}
+            alignItems={["center", "center", "center", "center"]}
+            justifyContent={"center"}
+            mt={[5, 5, 10, 10]}
+          >
+            <BiConfused color="#393939" size={"150px"} />
+            <Text mt={5} textAlign={"center"} fontSize={[20, 20, 26, 26]}>
+              No Products
+            </Text>
+          </Box>
+        </Box>
             )
           ) : (
             <Box
