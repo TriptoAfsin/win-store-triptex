@@ -17,6 +17,7 @@ function CatCard({ item }) {
         backgroundSize={"-moz-initial"}
         backgroundImage={`url(${item?.img})`}
         border={"1px solid white"}
+        data-testid="cat-card-id"
       >
         <Image
           src="/images/poly.png"

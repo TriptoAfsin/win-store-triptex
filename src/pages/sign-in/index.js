@@ -20,6 +20,8 @@ function SignIn() {
       >
         <Input
           placeholder="Email"
+          aria-label="Email"
+          aria-labelledby="Email"
           mb={5}
           type="email"
           width={["80vw", "80vw", "350px", "350px"]}

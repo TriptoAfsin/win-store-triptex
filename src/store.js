@@ -4,7 +4,7 @@ import { rtkApi } from "./redux/slices/apiSlice";
 import { createWrapper } from "next-redux-wrapper";
 import globalUiSlice from './redux/slices/globalUiSlice'
 
-const store = () => configureStore({
+export const store = () => configureStore({
   reducer: {
     globalUiSlice: globalUiSlice,
     [rtkApi.reducerPath]: rtkApi.reducer,

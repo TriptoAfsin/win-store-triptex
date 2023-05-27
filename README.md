@@ -36,7 +36,7 @@
      - yarn dev
 ### Building - 
      - yarn
-     - - create a `.env.local` file (use the data given in the email)
+     - create a `.env.local` file (use the data given in the email)
      - yarn build
 ### Security Measurements - 
  - API endpoint is not exposed(.env file is used)

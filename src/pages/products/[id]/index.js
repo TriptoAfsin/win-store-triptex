@@ -151,6 +151,7 @@ function ProductDetails({ product }) {
                   mr={[0, 0, 5, 5]}
                   minH={"50px"}
                   onClick={handleAddToCart}
+                  id="add-to-cart-id"
                 >
                   Add to cart
                 </Button>
@@ -169,6 +170,7 @@ function ProductDetails({ product }) {
                   fontWeight={400}
                   mr={[0, 0, 5, 5]}
                   minH={"50px"}
+                  id="add-to-wishlist-id"
                   onClick={handleAddToWishList}
                 >
                   <AiFillHeart color="white" size={20} />

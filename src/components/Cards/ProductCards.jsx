@@ -65,6 +65,7 @@ function ProductCards({ prod }) {
         mb={5}
         fontWeight={400}
         minH={"35px"}
+        id="add-to-cart"
         onClick={handleAddToCart}
       >
         Add to cart
