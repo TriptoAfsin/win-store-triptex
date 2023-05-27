@@ -1,10 +1,15 @@
+//Next imports
+import dynamic from "next/dynamic";
+//Components
 import { Box } from "@chakra-ui/react";
 import Carousel from "@/components/Carousel";
 import CatSlider from "@/components/CatSlider";
 import NewArrival from "@/components/NewArrival";
-import dynamic from "next/dynamic";
 import SpinnerLoader from "@/components/SpinnerLoader";
+
+//next-redux wrapper for ssr/ssg
 import { wrapper } from "@/store";
+//rtk query functions for getStaticProps
 import {
   getFakeProducts,
   getFakeCats,

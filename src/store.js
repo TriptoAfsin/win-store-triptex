@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { rtkApi } from "./redux/slices/apiSlice";
-import { setupListeners } from "@reduxjs/toolkit/query";
+// import { setupListeners } from "@reduxjs/toolkit/query";
 import { createWrapper } from "next-redux-wrapper";
 import globalUiSlice from './redux/slices/globalUiSlice'
 

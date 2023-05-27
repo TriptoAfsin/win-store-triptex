@@ -1,15 +1,19 @@
+//Next imports
 import Head from "next/head";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-// import { store } from "../store";
-import { Provider } from "react-redux";
 import { Roboto } from "next/font/google";
-import "../styles.css";
+//Providers
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { Provider } from "react-redux";
+import NextNProgress from "nextjs-progressbar";
+//next-redux wrapper for ssr/ssg
 import { wrapper } from "@/store";
+//Components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CategoryBar from "@/components/CategoryBar";
 import { Box } from "@chakra-ui/react";
-import NextNProgress from "nextjs-progressbar";
+//Global styles
+import "../styles.css";
 
 const roboto = Roboto({
   weight: "400",

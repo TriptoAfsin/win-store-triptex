@@ -1,3 +1,4 @@
+//util function to properly display strings
 const enumFormatter = (enumWord='HO_OPERATION') => {
     try{
         let words = enumWord?.includes("_") ? enumWord?.toLowerCase()?.split("_") : enumWord?.toLowerCase()?.split(" ") //returns array

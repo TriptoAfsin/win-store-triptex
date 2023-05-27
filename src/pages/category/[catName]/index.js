@@ -1,17 +1,21 @@
-//SSG with Dynamic Parameters
-
 import React from "react";
+//Next imports
 import { useRouter } from "next/router";
-import { Box, Text, Heading, Spinner } from "@chakra-ui/react";
-import enumFormatter from "@/utils/enumFormatter";
-import ProductCards from "@/components/Cards/ProductCards";
 import Head from "next/head";
+//Components
+import { Box, Text, Heading, Spinner } from "@chakra-ui/react";
+import ProductCards from "@/components/Cards/ProductCards";
+//Icons
 import { BiConfused } from "react-icons/bi";
+//rtk query functions for getStaticProps
 import {
   getFakeProductsByCats,
   getRunningQueriesThunk,
 } from "@/redux/slices/apiSlice";
+//next-redux wrapper for ssr/ssg
 import { wrapper } from "@/store";
+//util function to properly display strings
+import enumFormatter from "@/utils/enumFormatter";
 
 function CategoryPage({ catProducts }) {
   const router = useRouter();

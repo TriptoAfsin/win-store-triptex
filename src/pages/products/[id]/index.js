@@ -1,18 +1,22 @@
-//SSG with Dynamic Parameters
-
 import React from "react";
+//Next imports
 import { useRouter } from "next/router";
-import { Box, Text, Button, Image, Spinner, useToast } from "@chakra-ui/react";
-import { addCartItem, addWishlistItem } from "@/redux/slices/globalUiSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { AiFillHeart } from "react-icons/ai";
 import Head from "next/head";
+//Components
+import { Box, Text, Button, Image, Spinner, useToast } from "@chakra-ui/react";
+//Icons
+import { AiFillHeart } from "react-icons/ai";
 import { BiConfused } from "react-icons/bi";
+//next-redux wrapper for ssr/ssg
+import { wrapper } from "@/store";
+//rtk query functions for getStaticProps
 import {
   getFakeProductById,
   getRunningQueriesThunk,
 } from "@/redux/slices/apiSlice";
-import { wrapper } from "@/store";
+//Redux functional component hooks
+import { addCartItem, addWishlistItem } from "@/redux/slices/globalUiSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function ProductDetails({ product }) {
   const router = useRouter();

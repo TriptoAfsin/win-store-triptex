@@ -1,5 +1,7 @@
 import React from "react";
+//Components
 import { Box, Text } from "@chakra-ui/react";
+//Icons
 import {CgProfile} from 'react-icons/cg'
 
 function Profile() {

@@ -37,7 +37,7 @@ export const {
   util: { getRunningQueriesThunk },
 } = rtkApi;
 
-// export endpoints for use in SSR
+// export endpoints for use in SSR/SSG
 export const {
   getFakeProducts,
   getFakeCats,
