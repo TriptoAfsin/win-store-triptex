@@ -8,16 +8,7 @@ import enumFormatter from "@/utils/enumFormatter";
 import SpinnerLoader from "../SpinnerLoader";
 import Link from "next/link";
 import { AiFillCaretDown } from "react-icons/ai";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-} from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 
 function BestDeals() {
   const [selectedCat, setSelectedCat] = useState("electronics");

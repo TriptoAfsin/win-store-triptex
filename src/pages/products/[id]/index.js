@@ -124,7 +124,7 @@ function ProductDetails({ product }) {
               </Text>
               <Text
                 mt={5}
-                maxW={["100%", "100%", "350px", "350px"]}
+                maxW={["100%", "100%", "350px", "600px"]}
                 textAlign={["center", "center", "left", "left"]}
               >
                 {product?.description}

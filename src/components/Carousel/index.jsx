@@ -1,4 +1,7 @@
 import React from "react";
+//Next imports
+import Link from "next/link";
+//Components
 import {
   Box,
   IconButton,
@@ -6,7 +9,9 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
+//Icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+//React slick slider
 import Slider from "react-slick";
 
 // Settings for the slider
@@ -65,10 +70,10 @@ export default function Carousel() {
         transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={() => {
-            slider?.slickPrev()
-            if(count > 1){
-                setCount(count => count - 1)
-            }
+          slider?.slickPrev();
+          if (count > 1) {
+            setCount(count => count - 1);
+          }
         }}
       >
         <BiLeftArrowAlt />
@@ -85,10 +90,10 @@ export default function Carousel() {
         transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={() => {
-            slider?.slickNext()
-            if(count < 3){
-            setCount(count => count + 1)
-            }
+          slider?.slickNext();
+          if (count < 3) {
+            setCount(count => count + 1);
+          }
         }}
       >
         <BiRightArrowAlt />
@@ -102,7 +107,7 @@ export default function Carousel() {
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            backgroundSize={["cover","cover","cover","cover"]}
+            backgroundSize={["cover", "cover", "cover", "cover"]}
             backgroundImage={`url(${url})`}
           >
             <Box
@@ -115,9 +120,27 @@ export default function Carousel() {
               mb={5}
               ml={800}
             >
-              <Box width={20} height={4} borderRadius={10} bg={count === 1 ? "#034e53" : "#aa9393"} mr={3}></Box>
-              <Box width={20} height={4} borderRadius={10} bg={count === 2 ? "#034e53" : "#aa9393"} mr={3}></Box>
-              <Box width={20} height={4} borderRadius={10} bg={count === 3 ? "#034e53" : "#aa9393"} mr={3}></Box>
+              <Box
+                width={20}
+                height={4}
+                borderRadius={10}
+                bg={count === 1 ? "#034e53" : "#aa9393"}
+                mr={3}
+              ></Box>
+              <Box
+                width={20}
+                height={4}
+                borderRadius={10}
+                bg={count === 2 ? "#034e53" : "#aa9393"}
+                mr={3}
+              ></Box>
+              <Box
+                width={20}
+                height={4}
+                borderRadius={10}
+                bg={count === 3 ? "#034e53" : "#aa9393"}
+                mr={3}
+              ></Box>
             </Box>
             <Box
               display={"flex"}
@@ -166,11 +189,18 @@ export default function Carousel() {
                 I am not a product of my circumstances. I am a product of my
                 decisions.
               </Text>
-              <Button w={200} bg={"#14b1f0"} color={"white"} mt={[5, 5, 2, 2]}>
-                View More
-              </Button>
+              <Link href={"/category/electronics"}>
+                <Button
+                  w={200}
+                  bg={"#14b1f0"}
+                  color={"white"}
+                  mt={[5, 5, 2, 2]}
+                >
+                  View More
+                </Button>
+              </Link>
               <Box></Box>
-              <Box
+              {/* <Box
                 ml={"auto"}
                 width={165}
                 height={165}
@@ -190,7 +220,7 @@ export default function Carousel() {
                 <Text fontSize={[30, 30, 40, 48]} fontWeight={"semibold"}>
                   Off
                 </Text>
-              </Box>
+              </Box> */}
             </Box>
           </Box>
         ))}
