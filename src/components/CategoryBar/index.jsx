@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
-import Image from "next/image";
 import Link from "next/link";
 import { CgFacebook } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -12,6 +11,7 @@ import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
 import { Spinner } from "@chakra-ui/react";
 import SocialIcons from "../SocialIcons";
 import enumFormatter from "@/utils/enumFormatter";
+import { useRouter } from "next/router";
 const socialIcons = [
   {
     id: 1,
@@ -67,6 +67,8 @@ const linkArr = [
 ];
 
 function CategoryBar() {
+  const router = useRouter();
+  const { catName } = router.query;
   const {
     data: fakeCats,
     isLoading,
@@ -93,10 +95,14 @@ function CategoryBar() {
           <MenuButton>
             <GiHamburgerMenu size={20} color="white" />
           </MenuButton>
-          <MenuList color={"black"}>
+          <MenuList>
             {!isLoading ? (
               fakeCats?.map(item => (
-                <MenuItem key={item} mb={2}>
+                <MenuItem
+                  key={item}
+                  mb={2}
+                  color={item === catName ? "#00CAD7" : "black"}
+                >
                   <Link href={`/category/${item}`}>{enumFormatter(item)}</Link>
                 </MenuItem>
               ))

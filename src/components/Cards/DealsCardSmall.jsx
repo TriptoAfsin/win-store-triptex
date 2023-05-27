@@ -1,9 +1,9 @@
 import React from 'react'
 
-function DealsCards() {
+function DealsCardSmall() {
   return (
     <div>DealsCards</div>
   )
 }
 
-export default DealsCards
+export default DealsCardSmall
