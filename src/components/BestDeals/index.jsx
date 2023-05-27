@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Text, Image, Button } from "@chakra-ui/react";
+import { Box, Text, Image, Button, Divider } from "@chakra-ui/react";
 import {
   useGetFakeCatsQuery,
   useGetFakeProductsByCatsQuery,
@@ -79,25 +79,31 @@ function BestDeals() {
           </Box>
           <Box display={["none", "none", "flex", "flex"]}>
             {cats?.map(cat => (
-              <Text
-                color={selectedCat === cat ? "#00cad7" : "black"}
-                fontSize={[16, 16, 20, 20]}
-                mr={[2, 5, 3, 5]}
-                cursor={"pointer"}
-                key={cat}
-                textDecoration={selectedCat === cat ? "underline" : "none"}
-                fontWeight={"semibold"}
-                onClick={() => {
-                  setSelectedCat(cat);
-                  refetchCatProducts();
-                  setDummyLoading(true);
-                  setTimeout(() => {
-                    setDummyLoading(false);
-                  }, 1000);
-                }}
-              >
-                {enumFormatter(cat)}
-              </Text>
+              <Box key={cat} display={"flex"} flexDir={"column"}>
+                <Text
+                  color={selectedCat === cat ? "#00cad7" : "black"}
+                  fontSize={[16, 16, 20, 20]}
+                  mr={[2, 5, 3, 5]}
+                  cursor={"pointer"}
+                  fontWeight={"semibold"}
+                  onClick={() => {
+                    setSelectedCat(cat);
+                    refetchCatProducts();
+                    setDummyLoading(true);
+                    setTimeout(() => {
+                      setDummyLoading(false);
+                    }, 1000);
+                  }}
+                >
+                  {enumFormatter(cat)}
+                </Text>
+                <Divider
+                  width={"90%"}
+                  border={"2px"}
+                  color={selectedCat === cat ? "#0aaeb9" : "transparent"}
+                  borderRadius={5}
+                />
+              </Box>
             ))}
           </Box>
         </Box>
@@ -272,7 +278,6 @@ function BestDeals() {
                     display={"flex"}
                     flexDir={"column"}
                     justifyContent={"space-around"}
-                    
                     mb={5}
                   >
                     <Box display={"flex"} flexDir={"row"}>
