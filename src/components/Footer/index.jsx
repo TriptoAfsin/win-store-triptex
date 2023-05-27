@@ -134,7 +134,7 @@ const careLinks = [
   {
     id: 6,
     title: "Become a Vendor",
-    url: "/",
+    url: "/become-vendor",
   },
 ];
 

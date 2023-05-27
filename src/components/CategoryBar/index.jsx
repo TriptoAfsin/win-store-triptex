@@ -51,17 +51,17 @@ const linkArr = [
   },
   {
     id: 2,
-    url: "/",
+    url: "/emi",
     title: "Easy Monthly Installments",
   },
   {
     id: 3,
-    url: "/",
+    url: "/brands",
     title: "Shop by Brands",
   },
   {
     id: 4,
-    url: "/",
+    url: "/become-vendor",
     title: "Become a Vendor",
   },
 ];
