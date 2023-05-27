@@ -8,6 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { AiFillHeart } from "react-icons/ai";
 import Head from "next/head";
 import { BiConfused } from "react-icons/bi";
+import {
+  getFakeProductById,
+  getRunningQueriesThunk,
+} from "@/redux/slices/apiSlice";
+import { wrapper } from "@/store";
 
 function ProductDetails({ product }) {
   const router = useRouter();
@@ -202,17 +207,14 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
-  const { params } = context;
-
+export const getStaticProps = wrapper.getStaticProps(store => async context => {
+  const id = context.params?.id;
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_ROOT}/products/${params.id}`
-    );
-    const data = await response.json();
+    const result = await store.dispatch(getFakeProductById.initiate(id));
+    await Promise.all(store.dispatch(getRunningQueriesThunk()));
     return {
       props: {
-        product: data,
+        product: result?.data,
       },
     };
   } catch (e) {
@@ -222,4 +224,4 @@ export async function getStaticProps(context) {
       },
     };
   }
-}
+});

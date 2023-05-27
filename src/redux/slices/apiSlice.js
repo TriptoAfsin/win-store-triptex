@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { HYDRATE } from 'next-redux-wrapper'
+import { HYDRATE } from "next-redux-wrapper";
 
 export const rtkApi = createApi({
   reducerPath: "fakeStore",
@@ -8,7 +8,7 @@ export const rtkApi = createApi({
   }),
   extractRehydrationInfo(action, { reducerPath }) {
     if (action.type === HYDRATE) {
-      return action.payload[reducerPath]
+      return action.payload[reducerPath];
     }
   },
   tagTypes: ["products", "categories"],
@@ -22,11 +22,25 @@ export const rtkApi = createApi({
     getFakeProductsByCats: builder.query({
       query: cat => `/products/category/${cat}`,
     }),
+    getFakeProductById: builder.query({
+      query: id => `/products/${id}`,
+    }),
   }),
 });
 
+//for functional components
 export const {
   useGetFakeProductsQuery,
   useGetFakeCatsQuery,
   useGetFakeProductsByCatsQuery,
+  useGetFakeProductByIdQuery,
+  util: { getRunningQueriesThunk },
 } = rtkApi;
+
+// export endpoints for use in SSR
+export const {
+  getFakeProducts,
+  getFakeCats,
+  getFakeProductsByCats,
+  getFakeProductById,
+} = rtkApi.endpoints;

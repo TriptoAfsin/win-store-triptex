@@ -7,6 +7,11 @@ import enumFormatter from "@/utils/enumFormatter";
 import ProductCards from "@/components/Cards/ProductCards";
 import Head from "next/head";
 import { BiConfused } from "react-icons/bi";
+import {
+  getFakeProductsByCats,
+  getRunningQueriesThunk,
+} from "@/redux/slices/apiSlice";
+import { wrapper } from "@/store";
 
 function CategoryPage({ catProducts }) {
   const router = useRouter();
@@ -37,13 +42,15 @@ function CategoryPage({ catProducts }) {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Heading mt={5}>{catProducts?.length > 0 ? enumFormatter(catName) : ''}</Heading>
+        <Heading mt={5} color={'#393939'}>
+          {catProducts?.length > 0 ? enumFormatter(catName) : ""}
+        </Heading>
         <Box
           display={"flex"}
           flexDir={["column", "column", "row", "row"]}
           justifyContent={"center"}
           alignItems={"center"}
-          mt={5}
+          mt={[5,5,10,10]}
         >
           {catProducts ? (
             catProducts?.length > 0 ? (
@@ -52,24 +59,24 @@ function CategoryPage({ catProducts }) {
               ))
             ) : (
               <Box
-          display={"flex"}
-          flexDir={"column"}
-          padding={[5, 5, 10, 10]}
-          alignItems={["center", "center", "center", "center"]}
-        >
-          <Box
-            display={"flex"}
-            flexDir={"column"}
-            alignItems={["center", "center", "center", "center"]}
-            justifyContent={"center"}
-            mt={[5, 5, 10, 10]}
-          >
-            <BiConfused color="#393939" size={"150px"} />
-            <Text mt={5} textAlign={"center"} fontSize={[20, 20, 26, 26]}>
-              No Products
-            </Text>
-          </Box>
-        </Box>
+                display={"flex"}
+                flexDir={"column"}
+                padding={[5, 5, 10, 10]}
+                alignItems={["center", "center", "center", "center"]}
+              >
+                <Box
+                  display={"flex"}
+                  flexDir={"column"}
+                  alignItems={["center", "center", "center", "center"]}
+                  justifyContent={"center"}
+                  mt={[5, 5, 10, 10]}
+                >
+                  <BiConfused color="#393939" size={"150px"} />
+                  <Text mt={5} textAlign={"center"} fontSize={[20, 20, 26, 26]}>
+                    No Products
+                  </Text>
+                </Box>
+              </Box>
             )
           ) : (
             <Box
@@ -111,17 +118,14 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
-  const { params } = context;
-
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_ROOT}/products/category/${params.catName}`
-  );
-  const data = await response.json();
+export const getStaticProps = wrapper.getStaticProps(store => async context => {
+  const name = context.params?.catName;
+  const result = await store.dispatch(getFakeProductsByCats.initiate(name));
+  await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
   return {
     props: {
-      catProducts: data,
+      catProducts: result?.data,
     },
   };
-}
+});
