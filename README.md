@@ -4,7 +4,7 @@
 
 ## Features - 
  - Responsive design(Desktop, Tablet, Mobile)
- - Respects SEO standards
+ - Respects SEO standards(page wise titles)
  - Use of SSG(Static Site Generation)
  - Add to cart functionality
  - Add to wishlist functionality

@@ -28,6 +28,10 @@ const theme = extendTheme({
 });
 
 function App({ Component, pageProps, ...rest }) {
+  console.log(`⭐ Thanks for inviting me to the interview, the assignment was fun\n
+  Regardless of getting hired or not it was an excellent experience 😁
+  Feel free to get in touch with me - \n\n📞 +8801936396220\n✉️ AfsinTripto@gmail.com\n\nHappy Coding 🧑‍💻
+  `);
   const { store, props } = wrapper.useWrappedStore(rest);
   return (
     <>
@@ -54,7 +58,7 @@ function App({ Component, pageProps, ...rest }) {
               <Header />
               <CategoryBar />
               <Box flexGrow={1}>
-              <NextNProgress color="#2563eb" />
+                <NextNProgress color="#2563eb" />
                 <Component {...pageProps} />
               </Box>
               <Footer />

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { Box, Text, Heading, Spinner } from "@chakra-ui/react";
 import enumFormatter from "@/utils/enumFormatter";
 import ProductCards from "@/components/Cards/ProductCards";
+import Head from "next/head";
 
 function CategoryPage({ catProducts }) {
   const router = useRouter();
@@ -25,25 +26,39 @@ function CategoryPage({ catProducts }) {
   }
 
   return (
-    <Box
-      display={"flex"}
-      flexDir={"column"}
-      justifyContent={"center"}
-      alignItems={"center"}
-    >
-      <Heading mt={5}>{enumFormatter(catName)}</Heading>
+    <>
+      <Head>
+        <title>Win Store - {enumFormatter(catName)}</title>
+      </Head>
       <Box
         display={"flex"}
-        flexDir={["column", "column", "row", "row"]}
+        flexDir={"column"}
         justifyContent={"center"}
         alignItems={"center"}
-        mt={5}
       >
-        {catProducts ? (
-          catProducts?.length > 0 ? (
-            catProducts?.map(prod => (
-              <ProductCards prod={prod} key={prod?.id} />
-            ))
+        <Heading mt={5}>{enumFormatter(catName)}</Heading>
+        <Box
+          display={"flex"}
+          flexDir={["column", "column", "row", "row"]}
+          justifyContent={"center"}
+          alignItems={"center"}
+          mt={5}
+        >
+          {catProducts ? (
+            catProducts?.length > 0 ? (
+              catProducts?.map(prod => (
+                <ProductCards prod={prod} key={prod?.id} />
+              ))
+            ) : (
+              <Box
+                display={"flex"}
+                flexDir={"row"}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
+                <Text>No Products 😭</Text>
+              </Box>
+            )
           ) : (
             <Box
               display={"flex"}
@@ -51,21 +66,12 @@ function CategoryPage({ catProducts }) {
               justifyContent={"center"}
               alignItems={"center"}
             >
-              <Text>No Products 😭</Text>
+              <Spinner color="#03484c" mt={20} size={"lg"} />
             </Box>
-          )
-        ) : (
-          <Box
-            display={"flex"}
-            flexDir={"row"}
-            justifyContent={"center"}
-            alignItems={"center"}
-          >
-            <Spinner color="#03484c" mt={20} size={"lg"} />
-          </Box>
-        )}
+          )}
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
 
@@ -95,7 +101,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  console.log(params);
 
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_ROOT}/products/category/${params.catName}`

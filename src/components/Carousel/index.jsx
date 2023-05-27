@@ -35,7 +35,6 @@ export default function Carousel() {
   // buttons as the screen size changes
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "10px" });
-  console.log(slider)
 
   // These are the images used in the slide
   const cards = [

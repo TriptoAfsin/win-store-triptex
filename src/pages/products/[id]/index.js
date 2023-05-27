@@ -6,6 +6,8 @@ import { Box, Text, Button, Image, Spinner, useToast  } from "@chakra-ui/react";
 import { addCartItem, addWishlistItem } from "@/redux/slices/globalUiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import {AiFillHeart} from 'react-icons/ai'
+import Head from "next/head";
+
 
 function ProductDetails({ product }) {
   const router = useRouter();
@@ -61,6 +63,10 @@ function ProductDetails({ product }) {
   }
 
   return (
+    <>
+     <Head>
+        <title>Win Store - {product?.title}</title>
+      </Head>
     <Box display={"flex"} flexDir={"column"} alignItems={"center"} padding={[5,5,10,10]} mt={10}>
       <Box
         display={"flex"}
@@ -111,6 +117,7 @@ function ProductDetails({ product }) {
         </Box>
       </Box>
     </Box>
+    </>
   );
 }
 
@@ -138,7 +145,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  console.log(params);
 
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_ROOT}/products/${params.id}`
