@@ -39,6 +39,128 @@ const socialIcons = [
   },
 ];
 
+const trendingLinks = [
+  {
+    id: 1,
+    title: "Installments",
+    url: "/",
+  },
+  {
+    id: 2,
+    title: "Electronics",
+    url: "/",
+  },
+  {
+    id: 3,
+    title: "Grocery",
+    url: "/",
+  },
+  {
+    id: 4,
+    title: "Health & Beauty",
+    url: "/",
+  },
+  {
+    id: 5,
+    title: "Home Appliances",
+    url: "/",
+  },
+  {
+    id: 6,
+    title: "Mobile Accessories",
+    url: "/",
+  },
+];
+
+const infoLinks = [
+  {
+    id: 1,
+    title: "About Us",
+    url: "/",
+  },
+  {
+    id: 2,
+    title: "Contact Us",
+    url: "/",
+  },
+  {
+    id: 3,
+    title: "FAQs",
+    url: "/",
+  },
+  {
+    id: 4,
+    title: "Shipping & Return",
+    url: "/",
+  },
+  {
+    id: 5,
+    title: "Privacy policy",
+    url: "/",
+  },
+  {
+    id: 6,
+    title: "Terms & Conditions",
+    url: "/",
+  },
+];
+
+const careLinks = [
+  {
+    id: 1,
+    title: "My Account",
+    url: "/profile",
+  },
+  {
+    id: 2,
+    title: "Track Your Order",
+    url: "/profile",
+  },
+  {
+    id: 3,
+    title: "Recently Viewed",
+    url: "/",
+  },
+  {
+    id: 4,
+    title: "Wishlist",
+    url: "/",
+  },
+  {
+    id: 5,
+    title: "Compare",
+    url: "/",
+  },
+  {
+    id: 6,
+    title: "Become a Vendor",
+    url: "/",
+  },
+];
+
+const paymentCards = [
+  {
+    id: 1,
+    title: "visa-logo",
+    img: "/images/footer-logos/VISA.png",
+  },
+  {
+    id: 2,
+    title: "master-logo",
+    img: "/images/footer-logos/MASTER.png",
+  },
+  {
+    id: 3,
+    title: "cod-logo",
+    img: "/images/footer-logos/cod.png",
+  },
+  {
+    id: 4,
+    title: "installment-logo",
+    img: "/images/footer-logos/INSLALLMENTS.png",
+  },
+];
+
 function Footer() {
   return (
     <>
@@ -132,76 +254,23 @@ function Footer() {
                 color={"#00cad7"}
                 minW={["auto", "auto", 220, 250]}
                 mt={[5, 5, "-10", "-10"]}
+                mb={5}
               >
                 Trending
               </Text>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mt={5}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Installments
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Electronics
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  fontSize={14}
-                  mb={2}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Grocery
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Health & Beauty
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Home Appliances
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Mobile Accessories
-                </Text>
-              </Link>
+              {trendingLinks?.map(item => (
+                <Link href={item?.url} key={item?.id}>
+                  <Text
+                    color={"#ffffff"}
+                    minW={100}
+                    mb={2}
+                    fontSize={14}
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    {item?.title}
+                  </Text>
+                </Link>
+              ))}
             </Box>
           </Box>
           <Box display={"flex"} flexDir={"column"} ml={[2, 2, 2, 16]}>
@@ -215,76 +284,23 @@ function Footer() {
                 color={"#00cad7"}
                 minW={["auto", "auto", 220, 250]}
                 mt={[5, 5, "-10", "-10"]}
+                mb={5}
               >
                 Information
               </Text>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mt={5}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  About Us
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Contact Us
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  fontSize={14}
-                  mb={2}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  FAQs
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Shipping & Return
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Privacy policy
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Terms & Conditions
-                </Text>
-              </Link>
+              {infoLinks?.map(item => (
+                <Link href={item?.url} key={item?.id}>
+                  <Text
+                    color={"#ffffff"}
+                    minW={100}
+                    mb={2}
+                    fontSize={14}
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    {item?.title}
+                  </Text>
+                </Link>
+              ))}
             </Box>
           </Box>
           <Box display={"flex"} flexDir={"column"} ml={[2, 2, 2, 16]}>
@@ -298,76 +314,23 @@ function Footer() {
                 color={"#00cad7"}
                 minW={["auto", "auto", "auto", 250]}
                 mt={[5, 5, "-10", "-10"]}
+                mb={5}
               >
                 Customer Care
               </Text>
-              <Link href="/profile">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mt={5}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  My Account
-                </Text>
-              </Link>
-              <Link href="/profile">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Track Your Order
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  fontSize={14}
-                  mb={2}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Recently Viewed
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Wishlist
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Compare
-                </Text>
-              </Link>
-              <Link href="/">
-                <Text
-                  color={"#ffffff"}
-                  minW={100}
-                  mb={2}
-                  fontSize={14}
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Become a Vendor
-                </Text>
-              </Link>
+              {careLinks?.map(item => (
+                <Link href={item?.url} key={item?.id}>
+                  <Text
+                    color={"#ffffff"}
+                    minW={100}
+                    mb={2}
+                    fontSize={14}
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    {item?.title}
+                  </Text>
+                </Link>
+              ))}
             </Box>
           </Box>
         </Box>
@@ -379,62 +342,18 @@ function Footer() {
           justifyContent={"center"}
           mb={5}
         >
-          <Box
-            borderRadius={5}
-            bg={"#ffffff"}
-            ml={2}
-            display={"flex"}
-            alignItems={"center"}
-          >
-            <Image
-              src="/images/footer-logos/VISA.png"
-              width={84}
-              height={59}
-              alt="logo"
-            />
-          </Box>
-          <Box
-            borderRadius={5}
-            bg={"#ffffff"}
-            ml={2}
-            display={"flex"}
-            alignItems={"center"}
-          >
-            <Image
-              src="/images/footer-logos/MASTER.png"
-              width={84}
-              height={59}
-              alt="logo"
-            />
-          </Box>
-          <Box
-            borderRadius={5}
-            bg={"#ffffff"}
-            ml={2}
-            display={"flex"}
-            alignItems={"center"}
-          >
-            <Image
-              src="/images/footer-logos/cod.png"
-              width={84}
-              height={59}
-              alt="logo"
-            />
-          </Box>
-          <Box
-            borderRadius={5}
-            bg={"#ffffff"}
-            ml={2}
-            display={"flex"}
-            alignItems={"center"}
-          >
-            <Image
-              src="/images/footer-logos/INSLALLMENTS.png"
-              width={84}
-              height={59}
-              alt="logo"
-            />
-          </Box>
+          {paymentCards?.map(item => (
+            <Box
+              borderRadius={5}
+              bg={"#ffffff"}
+              ml={2}
+              display={"flex"}
+              alignItems={"center"}
+              key={item?.id}
+            >
+              <Image src={item?.img} width={84} height={59} alt={item?.title} />
+            </Box>
+          ))}
         </Box>
       </Box>
       <Box
