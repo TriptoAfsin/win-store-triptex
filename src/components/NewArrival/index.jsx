@@ -73,7 +73,7 @@ function NewArrival() {
       <Box position={"relative"} mt={[5, 5, 15, 15]} px={[5,5,10,10]}>
         <Box display={'flex'} flexDir={'row'} mb={[5, 5, 15, 15]}>
           <Text color={'#00cad7'} fontSize={[20,20,24,26]}>New</Text>
-          <Text color={'black'} ml={1} fontSize={[20,20,24,26]}>Arrivals</Text>
+          <Text color={'black'} ml={[1,1,2,2]} fontSize={[20,20,24,26]}>Arrivals</Text>
         </Box>
         {isLoading ? (
           <Box

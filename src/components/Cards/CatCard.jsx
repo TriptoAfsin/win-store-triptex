@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Text, Image } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 function CatCard({ item }) {

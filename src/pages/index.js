@@ -1,25 +1,23 @@
-import { Box, Heading, Button } from "@chakra-ui/react";
-import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import CategoryBar from "@/components/CategoryBar";
+import { Box } from "@chakra-ui/react";
 import Carousel from "@/components/Carousel";
 import CatSlider from "@/components/CatSlider";
 import NewArrival from "@/components/NewArrival";
+import dynamic from "next/dynamic";
+import SpinnerLoader from "@/components/SpinnerLoader";
+
+const BestDeals = dynamic(() => import("@/components/BestDeals"), {
+  loading: () => <SpinnerLoader />,
+});
 
 export default function Home() {
-  const {
-    data: fakeCats,
-    isLoading,
-    refetch: refetchCats,
-  } = useGetFakeCatsQuery();
   return (
     <>
-    <Box>
-      <Carousel />
-      <CatSlider />
-      <NewArrival />
-    </Box>
+      <Box>
+        <Carousel />
+        <CatSlider />
+        <NewArrival />
+        <BestDeals />
+      </Box>
     </>
   );
 }
