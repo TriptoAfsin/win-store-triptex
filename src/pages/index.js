@@ -21,3 +21,24 @@ export default function Home() {
     </>
   );
 }
+
+export async function getStaticProps() {
+  //to fetch cats for seo
+  const catResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_API_ROOT}/products/categories`
+  );
+  const catsData = await catResponse.json();
+
+  //ro fetch products for seo
+  const prodResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_API_ROOT}/products`
+  );
+  const productsData = await prodResponse.json();
+
+  return {
+    props: {
+      cats: catsData,
+      products: productsData?.slice(0, 10),
+    },
+  };
+}
