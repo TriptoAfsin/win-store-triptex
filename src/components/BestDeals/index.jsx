@@ -123,8 +123,8 @@ function BestDeals() {
               <Box
                 display={"flex"}
                 flexDir={["column", "column", "row", "column"]}
-                justifyContent={'center'}
-                alignItems={'center'}
+                justifyContent={"center"}
+                alignItems={"center"}
               >
                 <Link href={`/products/${catProds[0]?.id}`}>
                   <Box
@@ -265,18 +265,18 @@ function BestDeals() {
               >
                 <Link href={`/products/${catProds[2]?.id}`}>
                   <Box
-                    width={["90vw","90vw","414px","414px"]}
+                    width={["90vw", "90vw", "414px", "414px"]}
                     height={"588px"}
                     padding={5}
                     border={"1px solid rgba(0, 0, 0, 0.11)"}
                     display={"flex"}
                     flexDir={"column"}
                     justifyContent={"space-around"}
-                    alignItems={"center"}
+                    
                     mb={5}
                   >
                     <Box display={"flex"} flexDir={"row"}>
-                      <Box display={"flex"} flexDir={"column"} ml={2} mt={5}>
+                      <Box display={"flex"} flexDir={"column"} ml={2}>
                         <Text color={"#c82020"} fontSize={[20, 20, 24, 26]}>
                           Special
                         </Text>
@@ -294,7 +294,7 @@ function BestDeals() {
                         ml={2}
                         mt={10}
                         width={"150px"}
-                        height={"130px"}
+                        height={"120px"}
                         bgGradient="linear(to-r, #FF512F, #DD2476)"
                         display={"flex"}
                         flexDir={"column"}
@@ -310,26 +310,20 @@ function BestDeals() {
                     <Box
                       display={"flex"}
                       flexDir={"column"}
-                      alignItems={"start"}
+                      minH={"82px"}
+                      textAlign={"left"}
                     >
-                      <Box
-                        display={"flex"}
-                        flexDir={"column"}
-                        minH={"82px"}
-                        alignItems={"start"}
+                      <Text fontSize={[16, 16, 18, 20]} ml={2}>
+                        {catProds[2]?.title?.slice(0, 15)}
+                      </Text>
+                      <Text
+                        fontSize={[16, 16, 20, 22]}
+                        ml={2}
+                        color={"#14B1F0"}
+                        fontWeight={"semibold"}
                       >
-                        <Text fontSize={[16, 16, 18, 20]} ml={2}>
-                          {catProds[2]?.title?.slice(0, 15)}
-                        </Text>
-                        <Text
-                          fontSize={[16, 16, 20, 22]}
-                          ml={2}
-                          color={"#14B1F0"}
-                          fontWeight={"semibold"}
-                        >
-                          Rs {catProds[2]?.price}
-                        </Text>
-                      </Box>
+                        Rs {catProds[2]?.price}
+                      </Text>
                     </Box>
                   </Box>
                 </Link>
@@ -386,8 +380,13 @@ function BestDeals() {
                         </Text>
                       </Box>
                     </Box>
-                    <Box display={"flex"} flexDir={"column"} ml={2}>
-                      <Text color={"#00cad7"} fontSize={[20, 20, 24, 26]}>
+                    <Box
+                      display={"flex"}
+                      flexDir={"column"}
+                      ml={2}
+                      textAlign={"right"}
+                    >
+                      <Text color={"#034e53"} fontSize={[20, 20, 24, 26]}>
                         Special
                       </Text>
                       <Text color={"black"} fontSize={[20, 20, 24, 26]}>
