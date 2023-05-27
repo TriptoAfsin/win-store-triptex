@@ -3,12 +3,10 @@ import {
   Box,
   IconButton,
   useBreakpointValue,
-  Text,
   Spinner,
   Image,
+  Divider 
 } from "@chakra-ui/react";
-// Here we have used react-icons package for the icons
-// And react-slick as our Carousel Lib
 import Slider from "react-slick";
 import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
 import enumFormatter from "@/utils/enumFormatter";
@@ -45,8 +43,6 @@ const settings = {
 };
 
 export default function CatSlider() {
-  // As we have used custom buttons, we need a reference variable to
-  // change the state
   const [slider, setSlider] = React.useState(null);
   const [count, setCount] = React.useState(1);
   const {
@@ -58,22 +54,22 @@ export default function CatSlider() {
   const modifiedCats = [
     {
       id: 1,
-      title: !isLoading && fakeCats[0] ? enumFormatter(fakeCats[0]) : null,
+      title: !isLoading && fakeCats?.length > 0 ? enumFormatter(fakeCats[0]) : null,
       img: "/images/cats/electronics.png",
     },
     {
       id: 2,
-      title: !isLoading && fakeCats[1] ? enumFormatter(fakeCats[1]) : null,
+      title: !isLoading && fakeCats?.length > 1 ? enumFormatter(fakeCats[1]) : null,
       img: "/images/cats/Fashion.png",
     },
     {
       id: 3,
-      title: !isLoading && fakeCats[2] ? enumFormatter(fakeCats[2]) : null,
+      title: !isLoading && fakeCats?.length > 2 ? enumFormatter(fakeCats[2]) : null,
       img: "/images/cats/Fashion.png",
     },
     {
       id: 4,
-      title: !isLoading && fakeCats[3] ? enumFormatter(fakeCats[3]) : null,
+      title: !isLoading && fakeCats?.length > 3 ? enumFormatter(fakeCats[3]) : null,
       img: "/images/cats/babies.png",
     },
     {
@@ -83,17 +79,9 @@ export default function CatSlider() {
     },
   ];
 
-  // These are the breakpoints which changes the position of the
-  // buttons as the screen size changes
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "10px" });
 
-  // These are the images used in the slide
-  const cards = [
-    "/images/hero-1.png",
-    "/images/hero-1.png",
-    "/images/hero-1.png",
-  ];
 
   return (
     <Box position={"relative"} bgGradient="linear(to-b, #F3EDC9, #FFFFFF)">
@@ -172,6 +160,9 @@ export default function CatSlider() {
           </Slider>
         </>
       )}
+      <Box display={'flex'} flexDir={'colum'} alignItems={'center'} justifyContent={'center'}>
+        <Divider orientation='horizontal' mt={[10,10,15,15]} width={['95vw','95vw', '95vw', '95vw']} />
+      </Box>
     </Box>
   );
 }

@@ -1,7 +1,28 @@
 import React from "react";
-import { Box, Text, Button, Image } from "@chakra-ui/react";
+import { Box, Text, Button, Image, useToast } from "@chakra-ui/react";
+import Link from "next/link";
+import {addCartItem} from '@/redux/slices/globalUiSlice'
+import { useDispatch, useSelector } from 'react-redux';
 
 function ProductCards({prod}) {
+  const dispatch = useDispatch();
+  const toast = useToast();
+  const cartItems = useSelector(state => state?.globalUiSlice?.cartItems);
+  const handleAddToCart = () => {
+    if(!cartItems?.some( item => item?.id === prod?.id)){
+      dispatch(addCartItem(prod))
+    }
+    else{
+      toast({
+        title: 'Product already in cart 😅',
+        description: "This product is already in your cart",
+        status: 'warning',
+        duration: 4000,
+        isClosable: true,
+        position: 'top-right'
+      })
+    }
+  }
   return (
     <Box
       key={prod?.id}
@@ -16,21 +37,26 @@ function ProductCards({prod}) {
       alignItems={"center"}
       mb={5}
     >
-      <Text color={"#034e53"} fontSize={16} mb={5} mt={1}>
+      <Text color={"#034e53"} fontSize={16} mb={5} mt={2}>
         {prod?.title?.slice(0, 15)}..
       </Text>
-      <Image src={prod?.image} alt={prod?.title} height={150} width={150} />
-      <Text color={"#034e53"} fontSize={16} mb={5} mt={2}>
+      <Link href={`/products/${prod?.id}`}>
+        <Image src={prod?.image} alt={prod?.title} height={130} width={130} />
+      </Link>
+      <Text color={"#034e53"} fontSize={16} mb={5} mt={4}>
         RS {prod?.price}
       </Text>
       <Button
-        bg={"#15adb7"}
+        bg={cartItems?.some( item => item?.id === prod?.id) ? "#e2e8f0" : "#15adb7"}
         borderRadius={0}
         height={"35px"}
         color={"white"}
         mt={"auto"}
-        width={"80%"}
+        width={"90%"}
         mb={5}
+        fontWeight={400}
+        minH={'35px'}
+        onClick={handleAddToCart}
       >
         Add to cart
       </Button>
