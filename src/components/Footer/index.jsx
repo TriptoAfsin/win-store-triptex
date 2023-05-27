@@ -51,10 +51,9 @@ function Footer() {
         flexDir={"column"}
         minH={["200px", "200px", "404px", "404px"]}
         bottom={0}
-        minW={"100vw"}
         mt={["20vh", "20vh", "20vh", "20vh"]}
         textAlign={["center", "center", "left", "left"]}
-        maxW={'100vw'}
+        maxW={"100vw"}
       >
         <Box
           flexDir={["column", "column", "row", "row"]}
@@ -63,7 +62,7 @@ function Footer() {
           alignItems={"center"}
           mt={14}
         >
-          <Box display={"flex"} flexDir={"column"} ml={[0, 0, 16, 16]}>
+          <Box display={"flex"} flexDir={"column"} ml={[0, 0, 10, 16]}>
             <Box
               width={[100, 100, 132, 132]}
               height={"auto"}
@@ -78,7 +77,7 @@ function Footer() {
                   alt="logo"
                 />
               </Link>
-              <Text color={"#00cad7"} minW={["auto", "auto", 250, 250]} mt={2}>
+              <Text color={"#00cad7"} minW={["auto", "auto", 200, 250]} mt={2}>
                 Got questions? Call us 24/7!
               </Text>
               <Link href="tel:03111666144">
@@ -122,7 +121,7 @@ function Footer() {
               </Box>
             </Box>
           </Box>
-          <Box display={"flex"} flexDir={"column"} ml={[2, 2, 16, 16]}>
+          <Box display={"flex"} flexDir={"column"} ml={[2, 2, 2, 16]}>
             <Box
               width={[100, 100, 132, 132]}
               height={"auto"}
@@ -205,7 +204,7 @@ function Footer() {
               </Link>
             </Box>
           </Box>
-          <Box display={"flex"} flexDir={"column"} ml={[2, 2, 16, 16]}>
+          <Box display={"flex"} flexDir={"column"} ml={[2, 2, 2, 16]}>
             <Box
               width={[100, 100, 132, 132]}
               height={"auto"}
@@ -288,16 +287,16 @@ function Footer() {
               </Link>
             </Box>
           </Box>
-          <Box display={"flex"} flexDir={"column"} ml={[2, 2, 16, 16]}>
+          <Box display={"flex"} flexDir={"column"} ml={[2, 2, 2, 16]}>
             <Box
-              width={[100, 100, 132, 132]}
+              width={[100, 100, 130, 132]}
               height={"auto"}
-              mr={[0, 0, 12, 16]}
+              mr={[0, 0, 10, 16]}
               display={"block"}
             >
               <Text
                 color={"#00cad7"}
-                minW={["auto", "auto", 220, 250]}
+                minW={["auto", "auto", "auto", 250]}
                 mt={[5, 5, "-10", "-10"]}
               >
                 Customer Care
@@ -376,7 +375,7 @@ function Footer() {
           ml={"auto"}
           display={"flex"}
           flexDir={"row"}
-          mr={[2, 2, 0, 5]}
+          mr={[6, 6, 5, 5]}
           justifyContent={"center"}
           mb={5}
         >
