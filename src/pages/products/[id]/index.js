@@ -61,18 +61,18 @@ function ProductDetails({ product }) {
   }
 
   return (
-    <Box display={"flex"} flexDir={"column"} alignItems={"center"} padding={5}>
+    <Box display={"flex"} flexDir={"column"} alignItems={"center"} padding={[5,5,10,10]} mt={10}>
       <Box
         display={"flex"}
         flexDir={["column", "column", "row", "row"]}
         alignItems={"center"}
       >
-        <Image src={product?.image} alt={product?.title} width={200} />
+        <Image src={product?.image} alt={product?.title} width={[200,200,220,250]} mr={[0,0,10,10]}/>
         <Box display={"flex"} flexDir={"column"} ml={[0, 0, 10, 10]} mt={[5,5,0,0]}>
           <Text fontWeight={"semibold"} fontSize={[20, 20, 24, 24]} textAlign={['center', 'center', 'left', 'left']}>
             {product?.title}
           </Text>
-          <Text mt={5} maxW={["100%", "100%", "250px", "350px"]} textAlign={['center', 'center', 'left', 'left']}>
+          <Text mt={5} maxW={["100%", "100%", "350px", "350px"]} textAlign={['center', 'center', 'left', 'left']}>
             {product?.description}
           </Text>
           <Box display={'flex'} flexDir={['column','column','row','row']} alignItems={'center'} mt={[5,5,0,0]}>

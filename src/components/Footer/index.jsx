@@ -51,7 +51,7 @@ function Footer() {
         flexDir={"column"}
         minH={["200px", "200px", "404px", "404px"]}
         bottom={0}
-        mt={["20vh", "20vh", "20vh", "20vh"]}
+        mt={["20vh", "20vh", "26vh", "20vh"]}
         textAlign={["center", "center", "left", "left"]}
         maxW={"100vw"}
       >

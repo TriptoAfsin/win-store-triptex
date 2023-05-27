@@ -3,6 +3,7 @@ import { Box, Heading, Text, Image, Button } from "@chakra-ui/react";
 import {  removeWishlistItem } from "@/redux/slices/globalUiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillDelete } from "react-icons/ai";
+import {BsFillHeartbreakFill} from 'react-icons/bs'
 
 function WishlistModal({
   
@@ -25,7 +26,7 @@ function WishlistModal({
     >
       <Heading fontSize={24}>Wishlist</Heading>
       <Box display={"flex"} flexDir={"column"} alignItems={"center"} mt={5}>
-        {wishListItems?.map(item => (
+        {wishListItems?.length > 0 ? wishListItems?.map(item => (
           <Box
             key={item?.id}
             display={"flex"}
@@ -57,7 +58,10 @@ function WishlistModal({
               <AiFillDelete size={20} color={"white"} />
             </Button>
           </Box>
-        ))}
+        )): <Box mt={5} color={'#b6b6b6'} display={'flex'} flexDir={'column'} alignItems={'center'}>
+        <BsFillHeartbreakFill size={50}/>
+        <Text mt={5}>Your wishlist is empty </Text>
+      </Box>}
       </Box>
     </Box>
   );
