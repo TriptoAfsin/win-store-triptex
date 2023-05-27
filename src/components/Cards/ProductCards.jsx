@@ -11,6 +11,13 @@ function ProductCards({ prod }) {
   const handleAddToCart = () => {
     if (!cartItems?.some(item => item?.id === prod?.id)) {
       dispatch(addCartItem(prod));
+      toast({
+        title: "Product added to cart !",
+        status: "info",
+        duration: 2000,
+        isClosable: true,
+        position: "top-right",
+      });
     } else {
       toast({
         title: "Product already in cart 😅",

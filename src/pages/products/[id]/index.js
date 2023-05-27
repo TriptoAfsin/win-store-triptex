@@ -40,6 +40,13 @@ function ProductDetails({ product }) {
   const handleAddToWishList = () => {
     if (!wishListItems?.some(item => item?.id === product?.id)) {
       dispatch(addWishlistItem(product));
+      toast({
+        title: "Product added to wishlist !",
+        status: "info",
+        duration: 2000,
+        isClosable: true,
+        position: "top-right",
+      });
     } else {
       toast({
         title: "Already in wishlist 😅",
@@ -55,6 +62,13 @@ function ProductDetails({ product }) {
   const handleAddToCart = () => {
     if (!cartItems?.some(item => item?.id === product?.id)) {
       dispatch(addCartItem(product));
+      toast({
+        title: "Product added to cart !",
+        status: "info",
+        duration: 2000,
+        isClosable: true,
+        position: "top-right",
+      });
     } else {
       toast({
         title: "Product already in cart 😅",
