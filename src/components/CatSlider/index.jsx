@@ -1,18 +1,22 @@
 import React from "react";
+//Components
 import {
   Box,
   IconButton,
   useBreakpointValue,
   Spinner,
   Image,
-  Divider 
+  Divider,
 } from "@chakra-ui/react";
+import CatCard from "../Cards/CatCard";
+//Slick
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+//Redux functional component hooks
 import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
+//Utils
 import enumFormatter from "@/utils/enumFormatter";
-import CatCard from "../Cards/CatCard";
 
 // Settings for the slider
 const settings = {
@@ -56,22 +60,26 @@ export default function CatSlider() {
   const modifiedCats = [
     {
       id: 1,
-      title: !isLoading && fakeCats?.length > 0 ? enumFormatter(fakeCats[0]) : null,
+      title:
+        !isLoading && fakeCats?.length > 0 ? enumFormatter(fakeCats[0]) : null,
       img: "/images/cats/electronics.png",
     },
     {
       id: 2,
-      title: !isLoading && fakeCats?.length > 1 ? enumFormatter(fakeCats[1]) : null,
+      title:
+        !isLoading && fakeCats?.length > 1 ? enumFormatter(fakeCats[1]) : null,
       img: "/images/cats/Fashion.png",
     },
     {
       id: 3,
-      title: !isLoading && fakeCats?.length > 2 ? enumFormatter(fakeCats[2]) : null,
+      title:
+        !isLoading && fakeCats?.length > 2 ? enumFormatter(fakeCats[2]) : null,
       img: "/images/cats/Fashion.png",
     },
     {
       id: 4,
-      title: !isLoading && fakeCats?.length > 3 ? enumFormatter(fakeCats[3]) : null,
+      title:
+        !isLoading && fakeCats?.length > 3 ? enumFormatter(fakeCats[3]) : null,
       img: "/images/cats/babies.png",
     },
     {
@@ -83,7 +91,6 @@ export default function CatSlider() {
 
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "10px" });
-
 
   return (
     <Box position={"relative"} bgGradient="linear(to-b, #F3EDC9, #FFFFFF)">
@@ -157,13 +164,22 @@ export default function CatSlider() {
           {/* Slider */}
           <Slider {...settings} ref={slider => setSlider(slider)}>
             {modifiedCats?.map(item => (
-              <CatCard item={item} key={item?.id}/>
+              <CatCard item={item} key={item?.id} />
             ))}
           </Slider>
         </>
       )}
-      <Box display={'flex'} flexDir={'colum'} alignItems={'center'} justifyContent={'center'}>
-        <Divider orientation='horizontal' mt={[10,10,15,15]} width={['95vw','95vw', '95vw', '95vw']} />
+      <Box
+        display={"flex"}
+        flexDir={"colum"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <Divider
+          orientation="horizontal"
+          mt={[10, 10, 15, 15]}
+          width={["95vw", "95vw", "95vw", "95vw"]}
+        />
       </Box>
     </Box>
   );

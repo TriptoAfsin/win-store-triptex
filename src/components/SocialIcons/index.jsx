@@ -1,7 +1,10 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+//Next imports
 import Image from "next/image";
 import Link from "next/link";
+//Components
+import { Box } from "@chakra-ui/react";
+//Icons
 import { CgFacebook } from "react-icons/cg";
 
 function SocialIcons({

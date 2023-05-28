@@ -1,17 +1,22 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+//Next imports
 import Link from "next/link";
+import { useRouter } from "next/router";
+//Components
+import { Box, Text } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
+import SocialIcons from "../SocialIcons";
+//Icons
 import { CgFacebook } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { ImLinkedin2 } from "react-icons/im";
 import { BsInstagram } from "react-icons/bs";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+//Redux functional component hooks
 import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
-import { Spinner } from "@chakra-ui/react";
-import SocialIcons from "../SocialIcons";
+//Utils
 import enumFormatter from "@/utils/enumFormatter";
-import { useRouter } from "next/router";
 const socialIcons = [
   {
     id: 1,
@@ -78,8 +83,8 @@ function CategoryBar() {
     <Box
       as="header"
       w="100%"
-      position={'sticky'}
-      top={['67px']}
+      position={"sticky"}
+      top={["67px"]}
       zIndex={5000}
       display={"flex"}
       bg={"#0e3b3e"}

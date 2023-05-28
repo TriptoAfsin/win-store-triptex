@@ -1,7 +1,11 @@
 import React from "react";
-import { Box, Text, Button, Image, useToast } from "@chakra-ui/react";
+//Next imports
 import Link from "next/link";
+//Components
+import { Box, Text, Button, Image, useToast } from "@chakra-ui/react";
+//Redux reducers
 import { addCartItem } from "@/redux/slices/globalUiSlice";
+//Redux functional component hooks
 import { useDispatch, useSelector } from "react-redux";
 
 function ProductCards({ prod }) {

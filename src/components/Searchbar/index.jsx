@@ -1,7 +1,6 @@
 import React from "react";
+//Components
 import { Box, Text, Input, useDisclosure } from "@chakra-ui/react";
-import { BsChevronDown } from "react-icons/bs";
-import { FiSearch } from "react-icons/fi";
 import {
   Modal,
   ModalOverlay,
@@ -9,6 +8,9 @@ import {
   ModalBody,
 } from "@chakra-ui/react";
 import SearchModal from "../Modals/SearchModal";
+//Icons
+import { BsChevronDown } from "react-icons/bs";
+import { FiSearch } from "react-icons/fi";
 
 function SearchBar({ placeHolderText = "Search for products" }) {
   const { isOpen, onOpen, onClose } = useDisclosure();

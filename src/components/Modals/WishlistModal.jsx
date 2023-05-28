@@ -1,10 +1,14 @@
 import React from "react";
+//Next imports
+import Link from "next/link";
 import { Box, Heading, Text, Image, Button } from "@chakra-ui/react";
-import { removeWishlistItem } from "@/redux/slices/globalUiSlice";
-import { useDispatch, useSelector } from "react-redux";
+//Icons
 import { AiFillDelete } from "react-icons/ai";
 import { BsFillHeartbreakFill } from "react-icons/bs";
-import Link from "next/link";
+//Redux reducers
+import { removeWishlistItem } from "@/redux/slices/globalUiSlice";
+//Redux functional component hooks
+import { useDispatch, useSelector } from "react-redux";
 
 function WishlistModal({}) {
   const dispatch = useDispatch();
@@ -53,7 +57,7 @@ function WishlistModal({}) {
                   <Text ml={5}>{item?.title?.slice(0, 18)}..</Text>
                 </Box>
               </Link>
-              <Text fontWeight={"bold"} mr={5}>
+              <Text fontWeight={"bold"} mr={5} minW={['80px','80px','auto', 'auto']}>
                 RS {item?.price}
               </Text>
               <Button

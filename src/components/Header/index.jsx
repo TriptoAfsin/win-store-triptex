@@ -1,9 +1,10 @@
 import React from "react";
-import { Flex, Box, Text, Button } from "@chakra-ui/react";
+//Next imports
 import Image from "next/image";
 import Link from "next/link";
+//Components
+import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import SearchBar from "../Searchbar";
-import { GiHamburgerMenu } from "react-icons/gi";
 import {
   Drawer,
   DrawerBody,
@@ -21,6 +22,9 @@ import {
 } from "@chakra-ui/react";
 import WishlistModal from "../Modals/WishlistModal";
 import CartModal from "../Modals/CartModal";
+//Icons
+import { GiHamburgerMenu } from "react-icons/gi";
+//Redux functional component hooks
 import { useSelector } from "react-redux";
 
 function Header() {

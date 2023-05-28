@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+//Next imports
+import Link from "next/link";
+//Components
+import SpinnerLoader from "../SpinnerLoader";
 import { Box, Text, Image, Button, Divider } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+//Icons
+import { AiFillCaretDown } from "react-icons/ai";
+//Redux functional component hooks
 import {
   useGetFakeCatsQuery,
   useGetFakeProductsByCatsQuery,
 } from "@/redux/slices/apiSlice";
+//Utils
 import enumFormatter from "@/utils/enumFormatter";
-import SpinnerLoader from "../SpinnerLoader";
-import Link from "next/link";
-import { AiFillCaretDown } from "react-icons/ai";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 
 function BestDeals() {
   const [selectedCat, setSelectedCat] = useState("electronics");
@@ -171,7 +176,7 @@ function BestDeals() {
                         </Text>
                       </Box>
                     </Box>
-                    <Box display={"flex"} flexDir={"column"} ml={[5,5,2,2]}>
+                    <Box display={"flex"} flexDir={"column"} ml={[5, 5, 2, 2]}>
                       <Text color={"#00cad7"} fontSize={[20, 20, 24, 26]}>
                         Special
                       </Text>
@@ -211,7 +216,12 @@ function BestDeals() {
                       <Text color={"black"} fontSize={[20, 20, 24, 26]}>
                         Offer
                       </Text>
-                      <Box display={"flex"} flexDir={"column"} minH={"82px"} mt={[2,2,0,0]}>
+                      <Box
+                        display={"flex"}
+                        flexDir={"column"}
+                        minH={"82px"}
+                        mt={[2, 2, 0, 0]}
+                      >
                         <Text fontSize={[18, 18, 18, 20]}>
                           {catProds[1]?.title?.slice(0, 15)}..
                         </Text>

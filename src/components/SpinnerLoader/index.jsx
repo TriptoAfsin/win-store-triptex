@@ -1,4 +1,5 @@
 import React from "react";
+//Components
 import { Box, Spinner } from "@chakra-ui/react";
 
 function SpinnerLoader() {

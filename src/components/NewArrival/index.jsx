@@ -1,14 +1,14 @@
 //SSG with Dynamic Parameters
 
-import React, {useState} from "react";
+import React, { useState } from "react";
+//Next imports
 import { useRouter } from "next/router";
-import {
-  Box,
-  Text,
-  Spinner,
-} from "@chakra-ui/react";
+//Components
+import { Box, Text, Spinner } from "@chakra-ui/react";
 import ProductCards from "@/components/Cards/ProductCards";
+//Slick
 import Slider from "react-slick";
+//Redux functional component hooks
 import { useGetFakeProductsQuery } from "@/redux/slices/apiSlice";
 
 const settings = {
@@ -66,10 +66,19 @@ function NewArrival() {
 
   return (
     <>
-      <Box position={"relative"} mt={[5, 5, 15, 15]} px={[5,5,10,10]} background={'#ffffff'}>
-        <Box display={'flex'} flexDir={'row'} mb={[5, 5, 15, 15]}>
-          <Text color={'#00cad7'} fontSize={[20,20,24,26]}>New</Text>
-          <Text color={'black'} ml={[1,1,2,2]} fontSize={[20,20,24,26]}>Arrivals</Text>
+      <Box
+        position={"relative"}
+        mt={[5, 5, 15, 15]}
+        px={[5, 5, 10, 10]}
+        background={"#ffffff"}
+      >
+        <Box display={"flex"} flexDir={"row"} mb={[5, 5, 15, 15]}>
+          <Text color={"#00cad7"} fontSize={[20, 20, 24, 26]}>
+            New
+          </Text>
+          <Text color={"black"} ml={[1, 1, 2, 2]} fontSize={[20, 20, 24, 26]}>
+            Arrivals
+          </Text>
         </Box>
         {isLoading ? (
           <Box
@@ -83,7 +92,6 @@ function NewArrival() {
         ) : (
           <>
             {" "}
-
             {/* Slider */}
             <Slider {...settings} ref={slider => setSlider(slider)}>
               {products ? (

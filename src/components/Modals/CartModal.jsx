@@ -1,9 +1,13 @@
 import React from "react";
+//Components
 import { Box, Heading, Text, Image, Button } from "@chakra-ui/react";
-import { removeCartItem } from "@/redux/slices/globalUiSlice";
-import { useDispatch, useSelector } from "react-redux";
+//Icons
 import { AiFillDelete } from "react-icons/ai";
-import {BsFillCartXFill} from 'react-icons/bs'
+import { BsFillCartXFill } from "react-icons/bs";
+//Redux reducers
+import { removeCartItem } from "@/redux/slices/globalUiSlice";
+//Redux functional component hooks
+import { useDispatch, useSelector } from "react-redux";
 
 function CartModal({}) {
   const cartItems = useSelector(state => state?.globalUiSlice?.cartItems);
@@ -48,7 +52,11 @@ function CartModal({}) {
                 />
                 <Text ml={5}>{item?.title?.slice(0, 18)}..</Text>
               </Box>
-              <Text fontWeight={"bold"} mr={5}>
+              <Text
+                fontWeight={"bold"}
+                mr={5}
+                minW={["80px", "80px", "auto", "auto"]}
+              >
                 RS {item?.price}
               </Text>
               <Button
@@ -64,8 +72,14 @@ function CartModal({}) {
             </Box>
           ))
         ) : (
-          <Box mt={5} color={'#b6b6b6'} display={'flex'} flexDir={'column'} alignItems={'center'}>
-            <BsFillCartXFill size={50}/>
+          <Box
+            mt={5}
+            color={"#b6b6b6"}
+            display={"flex"}
+            flexDir={"column"}
+            alignItems={"center"}
+          >
+            <BsFillCartXFill size={50} />
             <Text mt={5}>Your cart is empty </Text>
           </Box>
         )}

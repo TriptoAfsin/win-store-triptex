@@ -1,8 +1,10 @@
 import React from "react";
+//Components
 import { Box, Input } from "@chakra-ui/react";
+//Icons
 import { FiSearch } from "react-icons/fi";
 
-function SearchModal({placeHolderText = 'Search for products'}) {
+function SearchModal({ placeHolderText = "Search for products" }) {
   return (
     <Box
       borderRadius={6}

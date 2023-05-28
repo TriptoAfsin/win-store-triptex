@@ -1,6 +1,8 @@
 import React from "react";
-import { Box, Text, Image } from "@chakra-ui/react";
+//Next imports
 import Link from "next/link";
+//Components
+import { Box, Text, Image } from "@chakra-ui/react";
 
 function CatCard({ item }) {
   return (
@@ -38,7 +40,12 @@ function CatCard({ item }) {
           mt={"140px"}
           ml={["-13px", "-13px", "-13px", "-13px"]}
         >
-          <Text fontSize={[18, 18, 22, 22]} fontWeight={"semibold"} ml={2} color={'black'}>
+          <Text
+            fontSize={[18, 18, 22, 22]}
+            fontWeight={"semibold"}
+            ml={2}
+            color={"black"}
+          >
             {item?.title}
           </Text>
           <Text
