@@ -2,13 +2,20 @@
 
 <p align="center"><img src="./public/favicon.png" width="256px"></img></p>
 
+![Repo Size](https://img.shields.io/github/languages/code-size/TriptoAfsin/win-store-triptex)
+![Files Count](https://img.shields.io/github/directory-file-count/TriptoAfsin/win-store-triptex)
+![Build](https://img.shields.io/badge/build-passing-green)
+![test](https://img.shields.io/badge/test-passing-green)
+
+
+
 ## Features - 
  - Responsive design(Desktop, Tablet, Mobile)😎
  - Respects SEO standards(page wise titles)🤖
- - Use of SSG(Static Site Generation)🚀
+ - Use of [SSG(Static Site Generation)](https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation)🚀
  - Add to cart functionality🛒
  - Add to wishlist functionality💖
- - Added few example test(Jest) cases(5) 🪲
+ - Added few example test([Jest](https://jestjs.io/)) cases(5) 🪲
 ## Routes - 
     - /
     - /sign-in
@@ -20,15 +27,15 @@
     - emi
 
 ## Technologies Used - 
- - NextJS
- - React
- - JavaScript
+ - [NextJS](https://nextjs.org/)
+ - [React](https://react.dev/)
+ - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 ## Libraries Used - 
- - Chakra UI
- - Framer Motion
- - Redux Toolkit
- - React Icons
- - React Slick
+ - [Chakra UI](https://chakra-ui.com/)
+ - [Framer Motion](https://www.framer.com/motion/)
+ - [Redux Toolkit](https://redux-toolkit.js.org/)
+ - [React Icons](https://redux-toolkit.js.org/)
+ - [React Slick](https://react-slick.neostack.com/)
 
 ## How to Use - 
 ### Running Dev - 
