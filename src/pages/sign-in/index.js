@@ -4,6 +4,16 @@ import { Box, Text, Button, Input, useToast } from "@chakra-ui/react";
 
 function SignIn() {
   const toast = useToast();
+  const handleSignIn = () => {
+    toast({
+      title: "This feature is not ready yet 😅",
+      description: "How about you hire me, then I implement this feature 😅",
+      status: "warning",
+      duration: 8000,
+      isClosable: true,
+      position: "top-right",
+    });
+  };
   return (
     <Box
       display={"flex"}
@@ -38,17 +48,7 @@ function SignIn() {
           borderRadius={5}
           fontWeight={400}
           minH={"50px"}
-          onClick={() => {
-            toast({
-              title: "This feature is not ready yet 😅",
-              description:
-                "How about you hire me, then I implement this feature 😅",
-              status: "warning",
-              duration: 8000,
-              isClosable: true,
-              position: "top-right",
-            });
-          }}
+          onClick={handleSignIn}
         >
           Signin
         </Button>

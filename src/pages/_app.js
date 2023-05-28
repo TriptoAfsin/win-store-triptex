@@ -53,7 +53,10 @@ function App({ Component, pageProps, ...rest }) {
         <meta property="og:url" content="" />
         <meta property="og:description" content="Win Store by TriptoAfsin" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/ZLp6DMH/web-thumb.png"
+        />
       </Head>
       <>
         <ChakraProvider theme={theme}>

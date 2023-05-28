@@ -7,6 +7,8 @@
 ![Build](https://img.shields.io/badge/build-passing-green)
 ![test](https://img.shields.io/badge/test-passing-green)
 
+### Live Link - [🚀Visit](https://win-store-triptex.vercel.app/)
+
 
 
 ## Features - 
@@ -53,7 +55,7 @@
 ### Security Measurements - 
  - API endpoint is not exposed(.env file is used)
 
-### Live Link - 
+### Live Link - [🚀Visit](https://win-store-triptex.vercel.app/)
 
 ## Limitations - 
     - Due to time constraints TypeScript was not used 😅
