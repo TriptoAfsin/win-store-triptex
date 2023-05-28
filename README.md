@@ -25,9 +25,9 @@
     - /profile
     - /products/[id]
     - /category/[catName]
-    - become-vendor
-    - brands
-    - emi
+    - /become-vendor
+    - /brands
+    - /emi
 
 ## Technologies Used - 
  - [NextJS](https://nextjs.org/)
