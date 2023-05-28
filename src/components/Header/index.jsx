@@ -94,6 +94,8 @@ function Header() {
         as="header"
         position="sticky"
         w="100%"
+        top={0}
+        zIndex={5000}
         bg={"#03484d"}
         color={"white"}
         flexDir={"row"}

@@ -11,6 +11,7 @@ function Profile() {
       flexDir={"column"}
       padding={[5, 5, 10, 10]}
       alignItems={["center", "center", "center", "center"]}
+      bg={"#ffffff"}
     >
       <Box
         display={"flex"}

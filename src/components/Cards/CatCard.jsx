@@ -38,7 +38,7 @@ function CatCard({ item }) {
           mt={"140px"}
           ml={["-13px", "-13px", "-13px", "-13px"]}
         >
-          <Text fontSize={[18, 18, 22, 22]} fontWeight={"semibold"} ml={2}>
+          <Text fontSize={[18, 18, 22, 22]} fontWeight={"semibold"} ml={2} color={'black'}>
             {item?.title}
           </Text>
           <Text

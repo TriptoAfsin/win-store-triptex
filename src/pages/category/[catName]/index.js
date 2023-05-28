@@ -45,8 +45,9 @@ function CategoryPage({ catProducts }) {
         flexDir={"column"}
         justifyContent={"center"}
         alignItems={"center"}
+        bg={"#ffffff"}
       >
-        <Heading mt={5} color={'#393939'}>
+        <Heading mt={5} color={"#393939"}>
           {catProducts?.length > 0 ? enumFormatter(catName) : ""}
         </Heading>
         <Box
@@ -54,7 +55,7 @@ function CategoryPage({ catProducts }) {
           flexDir={["column", "column", "row", "row"]}
           justifyContent={"center"}
           alignItems={"center"}
-          mt={[5,5,10,10]}
+          mt={[5, 5, 10, 10]}
         >
           {catProducts ? (
             catProducts?.length > 0 ? (

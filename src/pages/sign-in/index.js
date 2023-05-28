@@ -10,6 +10,7 @@ function SignIn() {
       flexDir={"column"}
       padding={[5, 5, 10, 10]}
       alignItems={["center", "center", "start", "start"]}
+      bg={"#ffffff"}
     >
       <Text fontSize={[22, 22, 28, 28]}>Signin</Text>
       <Box

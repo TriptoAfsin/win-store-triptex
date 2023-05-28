@@ -97,6 +97,7 @@ function ProductDetails({ product }) {
           alignItems={"center"}
           padding={[5, 5, 10, 10]}
           mt={10}
+          bg={"#ffffff"}
         >
           <Box
             display={"flex"}

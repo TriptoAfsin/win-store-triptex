@@ -28,7 +28,13 @@ function BestDeals() {
     }, 900);
   };
   return (
-    <Box display={"flex"} flexDir={"column"} padding={[5, 5, 10, 15]} mt={20}>
+    <Box
+      display={"flex"}
+      flexDir={"column"}
+      padding={[5, 5, 10, 15]}
+      mt={20}
+      background={"#ffffff"}
+    >
       <Box display={"flex"} flexDir={"row"}>
         <Box
           display={"flex"}

@@ -78,6 +78,9 @@ function CategoryBar() {
     <Box
       as="header"
       w="100%"
+      position={'sticky'}
+      top={['68px']}
+      zIndex={5000}
       display={"flex"}
       bg={"#0e3b3e"}
       color={"white"}

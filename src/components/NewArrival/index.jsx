@@ -6,7 +6,6 @@ import {
   Box,
   Text,
   Spinner,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import ProductCards from "@/components/Cards/ProductCards";
 import Slider from "react-slick";
@@ -15,7 +14,7 @@ import { useGetFakeProductsQuery } from "@/redux/slices/apiSlice";
 const settings = {
   dots: true,
   arrows: false,
-  infinite: true,
+  infinite: false,
   autoplay: false,
   speed: 500,
   autoplaySpeed: 5000,
@@ -42,10 +41,7 @@ const settings = {
 };
 
 function NewArrival() {
-  const top = useBreakpointValue({ base: "90%", md: "50%" });
-  const side = useBreakpointValue({ base: "30%", md: "10px" });
   const [slider, setSlider] = useState(null);
-  const [count, setCount] = useState(1);
   const router = useRouter();
 
   const {
@@ -70,7 +66,7 @@ function NewArrival() {
 
   return (
     <>
-      <Box position={"relative"} mt={[5, 5, 15, 15]} px={[5,5,10,10]}>
+      <Box position={"relative"} mt={[5, 5, 15, 15]} px={[5,5,10,10]} background={'#ffffff'}>
         <Box display={'flex'} flexDir={'row'} mb={[5, 5, 15, 15]}>
           <Text color={'#00cad7'} fontSize={[20,20,24,26]}>New</Text>
           <Text color={'black'} ml={[1,1,2,2]} fontSize={[20,20,24,26]}>Arrivals</Text>

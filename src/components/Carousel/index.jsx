@@ -140,7 +140,7 @@ export default function Carousel() {
               alignItems={["center", "center", "center", "start"]}
             >
               <Box display={"flex"}>
-                <Text fontSize={[30, 30, 40, 58]} fontWeight={"semibold"}>
+                <Text fontSize={[30, 30, 40, 58]} fontWeight={"semibold"} color={'black'}>
                   Shop
                 </Text>
                 <Text
