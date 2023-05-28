@@ -8,6 +8,7 @@
  - Use of SSG(Static Site Generation)🚀
  - Add to cart functionality🛒
  - Add to wishlist functionality💖
+ - Added few example test(Jest) cases(5) 🪲
 ## Routes - 
     - /
     - /sign-in
@@ -38,6 +39,10 @@
      - yarn
      - create a `.env.local` file (use the data given in the email)
      - yarn build
+### Testing(Bonus) - 
+     - yarn
+     - create a `.env.local` file (use the data given in the email)
+     - yarn test
 ### Security Measurements - 
  - API endpoint is not exposed(.env file is used)
 
