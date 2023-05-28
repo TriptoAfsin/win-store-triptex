@@ -89,6 +89,9 @@ function ProductDetails({ product }) {
     <>
       <Head>
         <title>Win Store - {product?.title}</title>
+        <meta property="og:image" content={product?.image} />
+        <meta property="og:description" content={product?.description} />
+        <meta property="og:title" content={product?.title} />
       </Head>
       {product ? (
         <Box
