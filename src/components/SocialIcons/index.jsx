@@ -22,13 +22,13 @@ function SocialIcons({
     <Box
       display={"flex"}
       flexDir={"row"}
-      ml={[5, 5, "auto", "auto"]}
+      ml={[6, 6, "auto", "auto"]}
       alignItems={"center"}
       mr={[0, 0, 5, 10]}
     >
       {socialIcons?.map(item => (
         <Box
-          ml={[5]}
+          ml={5}
           display={["block", "block", "block", "block"]}
           key={item?.id}
           data-testid="social-links-id"
