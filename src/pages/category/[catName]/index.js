@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 //Components
 import { Box, Text, Heading, Spinner } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import ProductCards from "@/components/Cards/ProductCards";
 //Icons
 import { BiConfused } from "react-icons/bi";
@@ -46,55 +47,77 @@ function CategoryPage({ catProducts }) {
         justifyContent={"center"}
         alignItems={"center"}
         bg={"#ffffff"}
-        ml={[0,0,5,0]}
+        ml={[0, 0, 5, 0]}
       >
         <Heading mt={5} color={"#393939"}>
           {catProducts?.length > 0 ? enumFormatter(catName) : ""}
         </Heading>
         <Box
           display={"flex"}
+          flexDir={"column"}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <Grid
+            templateColumns={[
+              "repeat(2, 1fr)",
+              "repeat(2, 1fr)",
+              "repeat(4, 1fr)",
+              "repeat(4, 1fr)",
+            ]}
+            gap={[2, 2, 6, 6]}
+          >
+            {catProducts ? (
+              catProducts?.length > 0 ? (
+                catProducts?.map(prod => (
+                  <GridItem w="100%" key={prod?.id} mt={[5, 5, 10, 10]}>
+                    <ProductCards prod={prod} key={prod?.id} />
+                  </GridItem>
+                ))
+              ) : (
+                <Box
+                  display={"flex"}
+                  flexDir={"column"}
+                  padding={[5, 5, 10, 10]}
+                  alignItems={["center", "center", "center", "center"]}
+                >
+                  <Box
+                    display={"flex"}
+                    flexDir={"column"}
+                    alignItems={["center", "center", "center", "center"]}
+                    justifyContent={"center"}
+                    mt={[5, 5, 10, 10]}
+                  >
+                    <BiConfused color="#393939" size={"150px"} />
+                    <Text
+                      mt={5}
+                      textAlign={"center"}
+                      fontSize={[20, 20, 26, 26]}
+                    >
+                      No Products
+                    </Text>
+                  </Box>
+                </Box>
+              )
+            ) : (
+              <Box
+                display={"flex"}
+                flexDir={"row"}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
+                <Spinner color="#03484c" mt={20} size={"lg"} />
+              </Box>
+            )}
+          </Grid>
+        </Box>
+        <Box
+          display={"flex"}
           flexDir={["column", "column", "row", "row"]}
           justifyContent={"center"}
           alignItems={"center"}
           mt={[5, 5, 10, 10]}
-        >
-          {catProducts ? (
-            catProducts?.length > 0 ? (
-              catProducts?.map(prod => (
-                <ProductCards prod={prod} key={prod?.id} />
-              ))
-            ) : (
-              <Box
-                display={"flex"}
-                flexDir={"column"}
-                padding={[5, 5, 10, 10]}
-                alignItems={["center", "center", "center", "center"]}
-              >
-                <Box
-                  display={"flex"}
-                  flexDir={"column"}
-                  alignItems={["center", "center", "center", "center"]}
-                  justifyContent={"center"}
-                  mt={[5, 5, 10, 10]}
-                >
-                  <BiConfused color="#393939" size={"150px"} />
-                  <Text mt={5} textAlign={"center"} fontSize={[20, 20, 26, 26]}>
-                    No Products
-                  </Text>
-                </Box>
-              </Box>
-            )
-          ) : (
-            <Box
-              display={"flex"}
-              flexDir={"row"}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
-              <Spinner color="#03484c" mt={20} size={"lg"} />
-            </Box>
-          )}
-        </Box>
+        ></Box>
       </Box>
     </>
   );

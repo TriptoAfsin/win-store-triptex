@@ -36,10 +36,10 @@ function ProductCards({ prod }) {
   return (
     <Box
       key={prod?.id}
-      width={"186px"}
+      width={["170px","170px","186px","186px"]}
       border={"1px solid rgba(0, 0, 0, 0.13)"}
       display={"flex"}
-      mr={5}
+      mr={[0,0,5,5]}
       flexDir={"column"}
       minHeight={"310px"}
       maxHeight={"310px"}
