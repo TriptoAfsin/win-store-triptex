@@ -13,6 +13,8 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 //React slick slider
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Settings for the slider
 const settings = {
@@ -46,18 +48,6 @@ export default function Carousel() {
 
   return (
     <Box position={"relative"} overflow={"hidden"}>
-      {/* CSS files for react-slick */}
-      <link
-        rel="stylesheet"
-        type="text/css"
-        charSet="UTF-8"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-      />
       {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"
@@ -189,7 +179,7 @@ export default function Carousel() {
                 I am not a product of my circumstances. I am a product of my
                 decisions.
               </Text>
-              <Link href={"/category/electronics"}>
+              <Link href={"/category/electronics"} data-testid="view-more-id">
                 <Button
                   w={200}
                   bg={"#14b1f0"}

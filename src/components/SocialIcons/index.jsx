@@ -2,8 +2,19 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { CgFacebook } from "react-icons/cg";
 
-function SocialIcons({ socialIcons }) {
+function SocialIcons({
+  socialIcons = [
+    {
+      id: 1,
+      url: "https://www.facebook.com/momagicbd/",
+      icon: <CgFacebook size={24} />,
+      trueIcon: true,
+      alt: "facebook",
+    },
+  ],
+}) {
   return (
     <Box
       display={"flex"}
@@ -17,6 +28,7 @@ function SocialIcons({ socialIcons }) {
           ml={[5]}
           display={["block", "block", "block", "block"]}
           key={item?.id}
+          data-testid="social-links-id"
         >
           <Link href={item?.url}>
             {item?.trueIcon ? (

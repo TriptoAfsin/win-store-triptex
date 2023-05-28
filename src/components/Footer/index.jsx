@@ -109,31 +109,37 @@ const careLinks = [
   {
     id: 1,
     title: "My Account",
+    testId: 'my-account-test-id',
     url: "/profile",
   },
   {
     id: 2,
     title: "Track Your Order",
+    testId: null,
     url: "/profile",
   },
   {
     id: 3,
     title: "Recently Viewed",
+    testId: null,
     url: "/",
   },
   {
     id: 4,
     title: "Wishlist",
+    testId: null,
     url: "/",
   },
   {
     id: 5,
     title: "Compare",
+    testId: null,
     url: "/",
   },
   {
     id: 6,
     title: "Become a Vendor",
+    testId: null,
     url: "/become-vendor",
   },
 ];
@@ -319,7 +325,7 @@ function Footer() {
                 Customer Care
               </Text>
               {careLinks?.map(item => (
-                <Link href={item?.url} key={item?.id}>
+                <Link href={item?.url} key={item?.id} data-testid={item?.testId}>
                   <Text
                     color={"#ffffff"}
                     minW={100}

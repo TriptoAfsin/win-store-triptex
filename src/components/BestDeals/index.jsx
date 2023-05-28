@@ -19,6 +19,14 @@ function BestDeals() {
     isLoading: isCatProdsLoading,
     refetch: refetchCatProducts,
   } = useGetFakeProductsByCatsQuery(selectedCat);
+  const handleCatSwitch = cat => {
+    setSelectedCat(cat);
+    refetchCatProducts();
+    setDummyLoading(true);
+    setTimeout(() => {
+      setDummyLoading(false);
+    }, 900);
+  };
   return (
     <Box display={"flex"} flexDir={"column"} padding={[5, 5, 10, 15]} mt={20}>
       <Box display={"flex"} flexDir={"row"}>
@@ -51,14 +59,8 @@ function BestDeals() {
                 {cats?.map(cat => (
                   <MenuItem
                     key={cat}
-                    onClick={() => {
-                      setSelectedCat(cat);
-                      refetchCatProducts();
-                      setDummyLoading(true);
-                      setTimeout(() => {
-                        setDummyLoading(false);
-                      }, 900);
-                    }}
+                    data-testid="best-deals-cat-id-2"
+                    onClick={() => handleCatSwitch(cat)}
                     color={cat === selectedCat ? "#00CAD7" : "black"}
                     mt={2}
                   >
@@ -77,14 +79,8 @@ function BestDeals() {
                   mr={[2, 5, 3, 5]}
                   cursor={"pointer"}
                   fontWeight={"semibold"}
-                  onClick={() => {
-                    setSelectedCat(cat);
-                    refetchCatProducts();
-                    setDummyLoading(true);
-                    setTimeout(() => {
-                      setDummyLoading(false);
-                    }, 1000);
-                  }}
+                  data-testid="best-deals-cat-id"
+                  onClick={() => handleCatSwitch(cat)}
                 >
                   {enumFormatter(cat)}
                 </Text>

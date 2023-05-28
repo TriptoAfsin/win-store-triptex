@@ -7,7 +7,7 @@ const customJestConfig = {
     clearMocks: true,
     moduleDirectories: ['node_modules', 'src'],
     setupFilesAfterEnv: [
-        './src/__setup__/setupTests.js',
+        './src/__tests__/setupTests.js',
       ],
     testMatch: [
         '<rootDir>/src/**/*.test.js',

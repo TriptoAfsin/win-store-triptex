@@ -59,6 +59,7 @@ function SearchBar({ placeHolderText = "Search for products" }) {
           focusBorderColor="transparent"
           color={"black"}
           _placeholder={{ color: "#aeaeae" }}
+          data-testid="search-bar-id"
         />
         <Box
           bg={"#b6b6b6"}

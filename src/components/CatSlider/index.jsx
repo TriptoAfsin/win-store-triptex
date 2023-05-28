@@ -8,6 +8,8 @@ import {
   Divider 
 } from "@chakra-ui/react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useGetFakeCatsQuery } from "@/redux/slices/apiSlice";
 import enumFormatter from "@/utils/enumFormatter";
 import CatCard from "../Cards/CatCard";

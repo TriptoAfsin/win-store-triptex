@@ -169,6 +169,7 @@ function Header() {
               ml={5}
               cursor={"pointer"}
               onClick={onWishlistOpen}
+              data-testid="wishlist-id"
               display={["none", "none", "none", "block"]}
             >
               <Image
