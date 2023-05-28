@@ -137,7 +137,7 @@ export default function Carousel() {
             <Box
               display={"flex"}
               flexDir={"column"}
-              ml={[10, 10, 20, 20]}
+              ml={[0, 0, 20, 20]}
               mt={10}
               alignItems={["center", "center", "center", "start"]}
             >
