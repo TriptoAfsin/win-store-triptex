@@ -13,7 +13,8 @@
 
 ## Features - 
  - Responsive design(Desktop, Tablet, Mobile)😎
- - Respects SEO standards(page wise titles)🤖
+ - Respects SEO standards(page wise titles, og tags)🤖
+ - <img src="https://i.ibb.co/z2738nb/Snipaste-2023-05-28-14-42-02.png" alt="Snipaste-2023-05-28-14-42-02" border="0">
  - Use of [SSG(Static Site Generation)](https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation)🚀
  - Add to cart functionality🛒
  - Add to wishlist functionality💖
