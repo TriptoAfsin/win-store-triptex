@@ -140,11 +140,11 @@ function BestDeals() {
                   >
                     <Box display={"flex"} flexDir={"column"}>
                       <Box display={"flex"} flexDir={"column"} minH={"82px"}>
-                        <Text fontSize={[16, 16, 18, 20]} ml={2}>
-                          {catProds[0]?.title?.slice(0, 15)}
+                        <Text fontSize={[18, 18, 18, 20]} ml={2}>
+                          {catProds[0]?.title?.slice(0, 15)}..
                         </Text>
                         <Text
-                          fontSize={[16, 16, 20, 22]}
+                          fontSize={[20, 20, 22, 22]}
                           ml={2}
                           color={"#14B1F0"}
                           fontWeight={"semibold"}
@@ -171,7 +171,7 @@ function BestDeals() {
                         </Text>
                       </Box>
                     </Box>
-                    <Box display={"flex"} flexDir={"column"} ml={2}>
+                    <Box display={"flex"} flexDir={"column"} ml={[5,5,2,2]}>
                       <Text color={"#00cad7"} fontSize={[20, 20, 24, 26]}>
                         Special
                       </Text>
@@ -211,12 +211,12 @@ function BestDeals() {
                       <Text color={"black"} fontSize={[20, 20, 24, 26]}>
                         Offer
                       </Text>
-                      <Box display={"flex"} flexDir={"column"} minH={"82px"}>
-                        <Text fontSize={[16, 16, 18, 20]}>
-                          {catProds[1]?.title?.slice(0, 15)}
+                      <Box display={"flex"} flexDir={"column"} minH={"82px"} mt={[2,2,0,0]}>
+                        <Text fontSize={[18, 18, 18, 20]}>
+                          {catProds[1]?.title?.slice(0, 15)}..
                         </Text>
                         <Text
-                          fontSize={[16, 16, 20, 22]}
+                          fontSize={[20, 20, 22, 22]}
                           color={"#14B1F0"}
                           fontWeight={"semibold"}
                         >
@@ -275,10 +275,10 @@ function BestDeals() {
                   >
                     <Box display={"flex"} flexDir={"row"}>
                       <Box display={"flex"} flexDir={"column"} ml={2}>
-                        <Text color={"#c82020"} fontSize={[20, 20, 24, 26]}>
+                        <Text color={"#c82020"} fontSize={[22, 22, 24, 26]}>
                           Special
                         </Text>
-                        <Text color={"black"} fontSize={[20, 20, 24, 26]}>
+                        <Text color={"black"} fontSize={[22, 22, 24, 26]}>
                           Offer
                         </Text>
                         <Image
@@ -311,11 +311,11 @@ function BestDeals() {
                       minH={"82px"}
                       textAlign={"left"}
                     >
-                      <Text fontSize={[16, 16, 18, 20]} ml={2}>
-                        {catProds[2]?.title?.slice(0, 15)}
+                      <Text fontSize={[20, 20, 20, 22]} ml={2}>
+                        {catProds[2]?.title?.slice(0, 15)}..
                       </Text>
                       <Text
-                        fontSize={[16, 16, 20, 22]}
+                        fontSize={[20, 20, 22, 22]}
                         ml={2}
                         color={"#14B1F0"}
                         fontWeight={"semibold"}
@@ -347,11 +347,11 @@ function BestDeals() {
                   >
                     <Box display={"flex"} flexDir={"column"}>
                       <Box display={"flex"} flexDir={"column"} minH={"82px"}>
-                        <Text fontSize={[16, 16, 18, 20]} ml={2}>
-                          {catProds[3]?.title?.slice(0, 15)}
+                        <Text fontSize={[18, 18, 22, 22]} ml={2}>
+                          {catProds[3]?.title?.slice(0, 15)}..
                         </Text>
                         <Text
-                          fontSize={[16, 16, 20, 22]}
+                          fontSize={[20, 20, 22, 22]}
                           ml={2}
                           color={"#14B1F0"}
                           fontWeight={"semibold"}
