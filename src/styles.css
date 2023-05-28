@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     font-family: 'Roboto', sans-serif !important;
-  }
+}
+
+.top-z{
+  z-index: 80000 !important;
+}
+
+.chakra-modal__content-container{
+  z-index: 80000 !important;
+}

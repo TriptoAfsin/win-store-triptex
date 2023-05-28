@@ -46,6 +46,7 @@ function CategoryPage({ catProducts }) {
         justifyContent={"center"}
         alignItems={"center"}
         bg={"#ffffff"}
+        ml={[0,0,5,0]}
       >
         <Heading mt={5} color={"#393939"}>
           {catProducts?.length > 0 ? enumFormatter(catName) : ""}

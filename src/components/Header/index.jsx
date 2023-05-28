@@ -48,6 +48,7 @@ function Header() {
         placement="right"
         onClose={onDrawerClose}
         finalFocusRef={btnRef}
+        className="top-z"
       >
         <DrawerOverlay />
         <DrawerContent>

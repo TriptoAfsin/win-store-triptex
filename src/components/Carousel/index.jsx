@@ -33,6 +33,18 @@ const settings = {
 export default function Carousel() {
   const [slider, setSlider] = React.useState(null);
   const [count, setCount] = React.useState(1);
+  const handlePrev = () => {
+    slider?.slickPrev();
+    if (count > 1) {
+      setCount(count => count - 1);
+    }
+  };
+  const handleNext = () => {
+    slider?.slickNext();
+    if (count < 3) {
+      setCount(count => count + 1);
+    }
+  };
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
@@ -59,12 +71,7 @@ export default function Carousel() {
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => {
-          slider?.slickPrev();
-          if (count > 1) {
-            setCount(count => count - 1);
-          }
-        }}
+        onClick={handlePrev}
       >
         <BiLeftArrowAlt />
       </IconButton>
@@ -79,12 +86,7 @@ export default function Carousel() {
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => {
-          slider?.slickNext();
-          if (count < 3) {
-            setCount(count => count + 1);
-          }
-        }}
+        onClick={handleNext}
       >
         <BiRightArrowAlt />
       </IconButton>
@@ -140,7 +142,11 @@ export default function Carousel() {
               alignItems={["center", "center", "center", "start"]}
             >
               <Box display={"flex"}>
-                <Text fontSize={[30, 30, 40, 58]} fontWeight={"semibold"} color={'black'}>
+                <Text
+                  fontSize={[30, 30, 40, 58]}
+                  fontWeight={"semibold"}
+                  color={"black"}
+                >
                   Shop
                 </Text>
                 <Text
@@ -189,28 +195,6 @@ export default function Carousel() {
                   View More
                 </Button>
               </Link>
-              <Box></Box>
-              {/* <Box
-                ml={"auto"}
-                width={165}
-                height={165}
-                borderRadius={"50%"}
-                bgGradient="linear(to-r, #FDC830, #F37335)"
-                display={["none", "none", "none", "flex"]}
-                flexDir={"column"}
-                alignItems={"center"}
-                justifyContent={"center"}
-                color={"white"}
-                mr={52}
-                mt={"-260"}
-              >
-                <Text fontSize={[30, 30, 40, 48]} fontWeight={"semibold"}>
-                  40%
-                </Text>
-                <Text fontSize={[30, 30, 40, 48]} fontWeight={"semibold"}>
-                  Off
-                </Text>
-              </Box> */}
             </Box>
           </Box>
         ))}

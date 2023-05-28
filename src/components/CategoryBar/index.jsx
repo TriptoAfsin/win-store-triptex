@@ -79,7 +79,7 @@ function CategoryBar() {
       as="header"
       w="100%"
       position={'sticky'}
-      top={['68px']}
+      top={['67px']}
       zIndex={5000}
       display={"flex"}
       bg={"#0e3b3e"}
